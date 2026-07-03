@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "The Fit Lens — Body Composition Tracking",
   description: "Track body composition, nutrition, and activity with AI-powered coaching. Android-first health app built for real results.",
+  verification: {
+    google: "Kw0Ld_H8GTiibaRH4N4q513MqQSlVuTLoxP4NbEu84Q",
+  },
 };
 
 export default function RootLayout({
