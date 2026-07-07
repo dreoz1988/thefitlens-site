@@ -4,7 +4,7 @@ import { BetaForm } from "./beta-form";
 export const metadata: Metadata = {
   title: "Request Beta Access — The Fit Lens",
   description:
-    "The Fit Lens tracks fat, muscle, and visceral fat, not just weight. Android-first, works with Galaxy Watch and the BLE scale you already own. Request beta access.",
+    "The Fit Lens tracks fat, muscle, and visceral fat, not just weight. Android-first. Works with your existing wearable and smart scale. No new hardware required. Request beta access.",
 };
 
 function CompositionChart() {
@@ -144,7 +144,8 @@ export default function BetaPage() {
               Request beta access
             </h2>
             <p className="text-neutral-400 mb-12">
-              Spots open in small batches. One email when yours does, nothing else.
+              Spots are limited, so sign up now and we&apos;ll email you once
+              there&apos;s an open spot for you.
             </p>
             <BetaForm />
           </div>
