@@ -14,11 +14,17 @@
           <p className="text-sm text-neutral-500 uppercase tracking-widest mb-4">
             Private Beta
           </p>
-          <p className="text-neutral-300 mb-2">
+          <p className="text-neutral-300 mb-6">
             The Fit Lens is currently in invitation-only beta.
           </p>
-          <p className="text-neutral-400 text-sm">
-            For access inquiries:{" "}
+          <a
+            href="/beta"
+            className="inline-block bg-gold text-neutral-950 font-medium px-8 py-3 hover:bg-white transition-colors"
+          >
+            Request beta access
+          </a>
+          <p className="text-neutral-400 text-sm mt-6">
+            Questions?{" "}
             <a href="mailto:support@thefitlens.com" className="text-white underline underline-offset-4 hover:text-neutral-300">
               support@thefitlens.com
             </a>
