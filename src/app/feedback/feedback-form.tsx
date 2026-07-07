@@ -9,7 +9,13 @@ const inputClass =
   "w-full bg-transparent border-0 border-b border-neutral-800 py-3 text-white " +
   "placeholder:text-neutral-600 focus:outline-none focus:border-gold transition-colors";
 
-export function FeedbackForm({ week }: { week: number | null }) {
+export function FeedbackForm({
+  week,
+  question,
+}: {
+  week: number | null;
+  question: string | null;
+}) {
   const [state, formAction, pending] = useActionState(submitFeedback, initialState);
 
   if (state.status === "success") {
@@ -69,9 +75,15 @@ export function FeedbackForm({ week }: { week: number | null }) {
       )}
 
       <div>
-        <label htmlFor="response_text" className="block text-sm text-neutral-400 mb-1">
-          Feedback
-        </label>
+        {question ? (
+          <label htmlFor="response_text" className="block text-neutral-300 leading-relaxed mb-3">
+            {question}
+          </label>
+        ) : (
+          <label htmlFor="response_text" className="block text-sm text-neutral-400 mb-1">
+            Feedback
+          </label>
+        )}
         <textarea
           id="response_text"
           name="response_text"

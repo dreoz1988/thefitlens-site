@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+const WEEK_QUESTIONS: Record<number, string> = {
+  1: "Did anything in setup or your first weigh-in confuse you, fail, or take longer than expected?",
+  2: "What made logging food easier or harder than you expected? Anything you gave up on logging because it was too much friction?",
+  3: "Did the daily coaching or avatar tell you something you actually didn't know about your body? Or did it feel like generic advice?",
+  4: "Are you still opening the app daily at this point? If not, what made you stop or use it less?",
+};
+
 export default async function FeedbackPage({
   searchParams,
 }: {
@@ -35,7 +42,7 @@ export default async function FeedbackPage({
               Unfiltered beats polished. Two sentences on what actually happened
               are worth more than a page of impressions.
             </p>
-            <FeedbackForm week={week} />
+            <FeedbackForm week={week} question={week !== null ? WEEK_QUESTIONS[week] ?? null : null} />
           </div>
         </section>
 
