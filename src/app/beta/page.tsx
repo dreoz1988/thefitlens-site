@@ -70,7 +70,7 @@ const DIFFERENTIATORS = [
   {
     n: "02",
     title: "The hardware you already own",
-    body: "Galaxy Watch and standard Bluetooth scales. Nothing proprietary, nothing new to buy.",
+    body: "Your wearable and standard Bluetooth scales, through Health Connect. Nothing proprietary, nothing new to buy.",
   },
   {
     n: "03",
@@ -105,7 +105,7 @@ export default function BetaPage() {
             </p>
             <p className="text-neutral-500 mb-10 max-w-prose">
               Built for Android. Works with your existing wearable and smart
-              scale — no new hardware required.
+              scale. No new hardware required.
             </p>
             <a
               href="#request"
