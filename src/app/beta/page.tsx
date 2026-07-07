@@ -104,8 +104,8 @@ export default function BetaPage() {
               cut, a recomp, or a GLP-1 protocol is judged on what actually changed.
             </p>
             <p className="text-neutral-500 mb-10 max-w-prose">
-              Built for Android. Works with Galaxy Watch and the BLE scale you
-              already own.
+              Built for Android. Works with your existing wearable and smart
+              scale — no new hardware required.
             </p>
             <a
               href="#request"
