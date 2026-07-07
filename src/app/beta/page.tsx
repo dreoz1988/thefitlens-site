@@ -70,7 +70,7 @@ const DIFFERENTIATORS = [
   {
     n: "02",
     title: "The hardware you already own",
-    body: "Your wearable and standard Bluetooth scales, through Health Connect. Nothing proprietary, nothing new to buy.",
+    body: "Your wearable, plus Renpho and Etekcity scales, with more being added. Nothing proprietary, nothing new to buy.",
   },
   {
     n: "03",
