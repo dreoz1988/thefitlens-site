@@ -92,7 +92,7 @@ export default function BetaPage() {
         {/* Hero */}
         <section className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center pt-12 pb-24 md:pt-20 md:pb-32">
           <div className="min-w-0">
-            <p className="text-sm text-gold uppercase tracking-widest mb-6">Private beta</p>
+            <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">Private beta</p>
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight mb-6">
               <span className="block">Lose fat.</span>
               <span className="block">Keep muscle.</span>

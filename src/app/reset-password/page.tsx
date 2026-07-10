@@ -19,7 +19,7 @@ export default function ResetPasswordPage() {
 
         <section className="pt-12 pb-24 md:pt-20 md:pb-32">
           <div className="max-w-md">
-            <p className="text-sm text-gold uppercase tracking-widest mb-6">Account</p>
+            <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">Account</p>
             <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3">
               Set a new password
             </h1>

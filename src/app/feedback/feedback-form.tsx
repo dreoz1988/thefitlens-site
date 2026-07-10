@@ -100,7 +100,7 @@ export function FeedbackForm({
           type="submit"
           disabled={pending}
           className="w-full sm:w-auto bg-gold text-neutral-950 font-medium px-8 py-3
-                     hover:bg-white transition-colors disabled:opacity-60
+                     hover:bg-neutral-300 transition-colors disabled:opacity-60
                      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
         >
           {pending ? "Sending..." : "Send feedback"}

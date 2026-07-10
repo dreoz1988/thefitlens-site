@@ -34,7 +34,7 @@ export default async function FeedbackPage({
 
         <section className="pt-12 pb-24 md:pt-20 md:pb-32">
           <div className="max-w-md">
-            <p className="text-sm text-gold uppercase tracking-widest mb-6">Beta program</p>
+            <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">Beta program</p>
             <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3">
               {week !== null ? `Week ${week} feedback` : "Beta feedback"}
             </h1>
