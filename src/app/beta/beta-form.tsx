@@ -7,7 +7,7 @@ const initialState: SignupState = { status: "idle" };
 
 const inputClass =
   "w-full bg-transparent border-0 border-b border-neutral-800 py-3 text-white " +
-  "placeholder:text-neutral-600 focus:outline-none focus:border-gold transition-colors";
+  "placeholder:text-neutral-600 focus:outline-none focus:border-inverse transition-colors";
 
 export function BetaForm() {
   const [state, formAction, pending] = useActionState(requestBetaAccess, initialState);
@@ -56,7 +56,7 @@ export function BetaForm() {
             type="checkbox"
             name="has_android"
             required
-            className="mt-1 size-4 accent-(--gold)"
+            className="mt-1 size-4 accent-(--inverse)"
           />
           <span className="text-neutral-300">
             I have an Android phone
@@ -97,7 +97,7 @@ export function BetaForm() {
                 type="radio"
                 name="glp1_status"
                 value={value}
-                className="size-4 accent-(--gold)"
+                className="size-4 accent-(--inverse)"
               />
               {label}
             </label>
@@ -109,9 +109,9 @@ export function BetaForm() {
         <button
           type="submit"
           disabled={pending}
-          className="w-full sm:w-auto bg-gold text-neutral-950 font-medium px-8 py-3
+          className="w-full sm:w-auto bg-inverse text-neutral-950 font-medium px-8 py-3
                      hover:bg-neutral-300 transition-colors disabled:opacity-60
-                     focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                     focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inverse"
         >
           {pending ? "Sending..." : "Request beta access"}
         </button>

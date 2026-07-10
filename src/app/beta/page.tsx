@@ -43,15 +43,15 @@ function CompositionChart() {
       <polyline
         points="20,160 67,155 114,158 161,149 208,144 255,147 302,138 349,133 396,125 443,122 490,123 537,112"
         fill="none"
-        className="stroke-gold"
+        className="stroke-inverse"
         strokeWidth="2"
       />
 
-      <circle cx="537" cy="112" r="3" className="fill-gold" />
+      <circle cx="537" cy="112" r="3" className="fill-inverse" />
       <circle cx="537" cy="179" r="3" className="fill-neutral-600" />
       <circle cx="537" cy="275" r="3" className="fill-neutral-200" />
 
-      <text x="552" y="116" className="fill-gold text-xs">Muscle</text>
+      <text x="552" y="116" className="fill-inverse text-xs">Muscle</text>
       <text x="552" y="183" className="fill-neutral-500 text-xs">Scale weight</text>
       <text x="552" y="279" className="fill-neutral-200 text-xs">Fat mass</text>
 

@@ -4,15 +4,15 @@
   --background: #ffffff;
   --foreground: #171717;
   /* Interactive/CTA: monochrome inversion (2026-07-10) - white fill, near-black text. Gold retired. */
-  --gold: #ffffff;
-  --gold-dim: #a3a3a3;
+  --inverse: #ffffff;
+  --inverse-dim: #a3a3a3;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-gold: var(--gold);
-  --color-gold-dim: var(--gold-dim);
+  --color-inverse: var(--inverse);
+  --color-inverse-dim: var(--inverse-dim);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

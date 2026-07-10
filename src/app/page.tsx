@@ -19,7 +19,7 @@
           </p>
           <a
             href="/beta"
-            className="inline-block bg-gold text-neutral-950 font-medium px-8 py-3 hover:bg-neutral-300 transition-colors"
+            className="inline-block bg-inverse text-neutral-950 font-medium px-8 py-3 hover:bg-neutral-300 transition-colors"
           >
             Request beta access
           </a>

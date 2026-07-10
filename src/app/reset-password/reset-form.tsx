@@ -7,7 +7,7 @@ const initialState: ResetState = { status: "idle" };
 
 const inputClass =
   "w-full bg-transparent border-0 border-b border-neutral-800 py-3 text-white " +
-  "placeholder:text-neutral-600 focus:outline-none focus:border-gold transition-colors";
+  "placeholder:text-neutral-600 focus:outline-none focus:border-inverse transition-colors";
 
 // The recovery token arrives in the URL fragment (implicit flow):
 //   /reset-password#access_token=...&type=recovery
@@ -111,9 +111,9 @@ export function ResetForm() {
         <button
           type="submit"
           disabled={pending}
-          className="w-full sm:w-auto bg-gold text-neutral-950 font-medium px-8 py-3
+          className="w-full sm:w-auto bg-inverse text-neutral-950 font-medium px-8 py-3
                      hover:bg-neutral-300 transition-colors disabled:opacity-60
-                     focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                     focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inverse"
         >
           {pending ? "Updating..." : "Update password"}
         </button>
