@@ -1,5 +1,7 @@
 "use server";
 
+import { after } from "next/server";
+
 export type SignupState = {
   status: "idle" | "success" | "error";
   message?: string;
@@ -7,6 +9,47 @@ export type SignupState = {
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const GLP1_VALUES = new Set(["yes", "no", "prefer_not_to_say"]);
+
+const ALERT_TO = "dreoz1988@gmail.com";
+const ALERT_FROM = "FitLens Alerts <alerts@mail.thefitlens.com>";
+
+async function sendSignupAlert(signup: {
+  email: string;
+  device_model: string | null;
+  glp1_status: string | null;
+}) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.error("beta signup alert: RESEND_API_KEY not configured, skipping");
+    return;
+  }
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: ALERT_FROM,
+        to: [ALERT_TO],
+        subject: `New beta signup: ${signup.email}`,
+        text: [
+          `Email: ${signup.email}`,
+          `Android: yes`,
+          `Device: ${signup.device_model ?? "not provided"}`,
+          `GLP-1: ${signup.glp1_status ?? "not provided"}`,
+          `Signed up: ${new Date().toISOString()}`,
+        ].join("\n"),
+      }),
+    });
+    if (!res.ok) {
+      console.error("beta signup alert failed:", res.status, await res.text().catch(() => ""));
+    }
+  } catch (err) {
+    console.error("beta signup alert failed:", err);
+  }
+}
 
 export async function requestBetaAccess(
   _prev: SignupState,
@@ -60,6 +103,18 @@ export async function requestBetaAccess(
 
   // 409 = this email is already on the list. Same outcome for the visitor.
   if (res && (res.ok || res.status === 409)) {
+    if (res.ok) {
+      // New row only (not a duplicate). Runs after the response is sent,
+      // so a slow or failed send can never affect the visitor.
+      const glp1Status = GLP1_VALUES.has(glp1Raw) ? glp1Raw : null;
+      after(() =>
+        sendSignupAlert({
+          email,
+          device_model: deviceModel.slice(0, 120) || null,
+          glp1_status: glp1Status,
+        })
+      );
+    }
     return { status: "success" };
   }
 
