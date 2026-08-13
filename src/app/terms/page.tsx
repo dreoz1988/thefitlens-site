@@ -3,14 +3,6 @@ export const metadata = {
   description: "Terms of service for The Fit Lens mobile application.",
 };
 
-function Placeholder({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="bg-yellow-100 text-yellow-800 font-semibold px-1 rounded border border-yellow-300">
-      {children}
-    </span>
-  );
-}
-
 export default function Terms() {
   return (
     <main className="min-h-screen bg-white text-neutral-900 py-16 px-6">
@@ -434,7 +426,7 @@ export default function Terms() {
             <p>Before initiating any formal legal proceeding, you agree to attempt to resolve any Dispute informally. To initiate informal resolution, contact us at <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a> with the subject line &quot;Dispute Notice&quot; and describe the nature of your dispute, the relief you are seeking, and your contact information. We will attempt to resolve the Dispute through good-faith negotiation within thirty (30) days of receiving your notice. If the Dispute is not resolved within thirty (30) days of submission (or such extended period as you and we mutually agree in writing), either party may proceed to formal arbitration as set forth below. Completion of this informal dispute resolution process is a prerequisite to initiating arbitration.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">20.3 Binding Individual Arbitration</h3>
             <p>YOU AND THE FIT LENS LLC AGREE THAT ALL DISPUTES THAT CANNOT BE RESOLVED THROUGH INFORMAL DISPUTE RESOLUTION UNDER SECTION 20.2 WILL BE RESOLVED THROUGH FINAL AND BINDING INDIVIDUAL ARBITRATION, RATHER THAN IN COURT, EXCEPT AS PROVIDED IN SECTIONS 20.5 AND 20.6.</p>
-            <p className="mt-3">The arbitration will be administered by the American Arbitration Association (&quot;AAA&quot;) under its Consumer Arbitration Rules, which are available at www.adr.org or by calling the AAA at 1-800-778-7879. The arbitration will be conducted <Placeholder>IN PHOENIX, ARIZONA, OR BY REMOTE MEANS IF MUTUALLY AGREED</Placeholder>. The arbitrator will be selected pursuant to the AAA Consumer Arbitration Rules.</p>
+            <p className="mt-3">The arbitration will be administered by the American Arbitration Association (&quot;AAA&quot;) under its Consumer Arbitration Rules, which are available at www.adr.org or by calling the AAA at 1-800-778-7879. The arbitration will be conducted in Phoenix, Arizona, or by remote means if mutually agreed. The arbitrator will be selected pursuant to the AAA Consumer Arbitration Rules.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">20.4 Arbitration Fees and Costs</h3>
             <p>You will be responsible for paying the AAA&rsquo;s initial filing fee (currently $200 for claims up to $10,000 under the AAA Consumer Arbitration Rules). The Fit Lens LLC will pay all remaining AAA administrative fees, arbitrator compensation, and other arbitration costs. If the arbitrator determines that your claim was frivolous or brought in bad faith, the arbitrator may award us our fees and costs. Each party is responsible for its own attorney fees, except as otherwise awarded by the arbitrator pursuant to applicable law.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">20.5 Opt-Out Right</h3>

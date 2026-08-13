@@ -3,14 +3,6 @@ export const metadata = {
   description: "Privacy policy for The Fit Lens mobile application.",
 };
 
-function Placeholder({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="bg-yellow-100 text-yellow-800 font-semibold px-1 rounded border border-yellow-300">
-      {children}
-    </span>
-  );
-}
-
 export default function PrivacyPolicy() {
   return (
     <main className="min-h-screen bg-white text-neutral-900 py-16 px-6">
@@ -121,7 +113,7 @@ export default function PrivacyPolicy() {
               <li>Mobile build and deployment infrastructure (Expo Application Services / EAS)</li>
               <li>AI and machine learning processing services (used for coaching recommendations and AI Chef features)</li>
               <li>Crash reporting and diagnostics services</li>
-              <li>Payment processing (Stripe or equivalent)</li>
+              <li>Payment processing (Google Play In-App Billing)</li>
             </ul>
             <h3 className="text-lg font-semibold mt-4 mb-2">4B. Healthcare Provider Sharing (User-Initiated)</h3>
             <p>The Services offer a &lsquo;Share with Doctor&rsquo; feature that allows you to generate and share a PDF health summary with a healthcare provider of your choice. This sharing occurs only upon your explicit, affirmative action and is solely your choice. We do not independently transmit your data to any healthcare provider.</p>
@@ -511,7 +503,7 @@ export default function PrivacyPolicy() {
                     <td className="border border-neutral-300 px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Disclosed To:</li>
-                        <li>Payment processor (Stripe or equivalent <Placeholder>CONFIRM BEFORE PUBLICATION</Placeholder>)</li>
+                        <li>Payment processor (Google Play In-App Billing)</li>
                         <li>Billing support providers</li>
                       </ul>
                       <p className="mt-2 font-medium">Not Sold or Shared for Targeted Advertising</p>
