@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -7,14 +8,33 @@ export const metadata: Metadata = {
     "The Fit Lens splits every weigh-in into fat, muscle, and visceral fat, then coaches on what actually changed. Android, Bluetooth smart scale and body tape required. Private beta.",
 };
 
-function BodyScoreArt() {
+function ScreenshotFrame({
+  src,
+  alt,
+  width,
+  height,
+}: {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}) {
   return (
-    <svg viewBox="0 0 300 200" role="img" aria-label="Body Score gauge showing 7.9 out of 10" className="w-full h-auto max-w-xs">
-      <path d="M35,170 A110,110 0 0 1 265,170" fill="none" className="stroke-border" strokeWidth="10" strokeLinecap="round" />
-      <path d="M35,170 A110,110 0 0 1 223,79" fill="none" stroke="var(--teal)" strokeWidth="10" strokeLinecap="round" />
-      <text x="150" y="140" textAnchor="middle" fill="var(--foreground)" fontSize="44" fontWeight="600">7.9</text>
-      <text x="150" y="168" textAnchor="middle" className="fill-subtle text-xs">Body Score</text>
-    </svg>
+    <div
+      className="w-full max-w-[240px] rounded-[2rem] border border-border p-1.5"
+      style={{ background: "var(--surface)" }}
+    >
+      <div className="rounded-[1.6rem] overflow-hidden">
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          sizes="(max-width: 768px) 220px, 240px"
+          className="w-full h-auto block"
+        />
+      </div>
+    </div>
   );
 }
 
@@ -43,83 +63,35 @@ function AvatarArt() {
   );
 }
 
-function Glp1Art() {
-  return (
-    <svg viewBox="0 0 360 180" role="img" aria-label="Chart of weight declining while lean mass is preserved across a GLP-1 protocol" className="w-full h-auto max-w-xs">
-      <line x1="15" y1="90" x2="245" y2="90" className="stroke-border" strokeDasharray="2 6" />
-      <polyline points="15,60 55,68 95,78 135,90 175,98 215,108" fill="none" stroke="var(--coral)" strokeWidth="2" />
-      <polyline points="15,60 55,62 95,60 135,64 175,61 215,63" fill="none" stroke="var(--teal)" strokeWidth="2" />
-      <circle cx="215" cy="108" r="3" fill="var(--coral)" />
-      <circle cx="215" cy="63" r="3" fill="var(--teal)" />
-      <text x="224" y="66" fill="var(--teal)" className="text-xs">Lean mass</text>
-      <text x="224" y="112" fill="var(--coral)" className="text-xs">Weight</text>
-      <line x1="95" y1="30" x2="95" y2="150" className="stroke-amber-400/40" strokeWidth="1" strokeDasharray="3 4" />
-      <text x="95" y="20" textAnchor="middle" fill="var(--amber)" className="text-xs">Dose</text>
-    </svg>
-  );
-}
-
-function FoodScanArt() {
-  return (
-    <svg viewBox="0 0 300 180" role="img" aria-label="Barcode scan resolving into a protein, carb, and fat breakdown" className="w-full h-auto max-w-xs">
-      {[0, 4, 7, 9, 13, 16, 18, 22, 25, 29, 32, 34, 38].map((x, i) => (
-        <rect key={x} x={20 + x} y="50" width={i % 3 === 0 ? 3 : 1.5} height="70" className="fill-subtle" />
-      ))}
-      <path d="M100,85 L150,85" className="stroke-border" strokeWidth="1.5" markerEnd="url(#arrow)" />
-      <defs>
-        <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-          <path d="M0,0 L8,4 L0,8 Z" className="fill-subtle" />
-        </marker>
-      </defs>
-      <rect x="165" y="60" width="110" height="16" rx="2" fill="var(--teal)" />
-      <rect x="165" y="82" width="80" height="16" rx="2" fill="var(--azure)" />
-      <rect x="165" y="104" width="50" height="16" rx="2" fill="var(--amber)" />
-      <text x="165" y="132" className="fill-subtle text-xs">Protein · Carbs · Fat</text>
-    </svg>
-  );
-}
-
-function ReportArt() {
-  return (
-    <svg viewBox="0 0 240 200" role="img" aria-label="Health summary PDF with a trend chart and a few lines of text" className="w-full h-auto max-w-xs">
-      <rect x="30" y="10" width="160" height="180" rx="4" fill="none" className="stroke-border" strokeWidth="1.5" />
-      <rect x="30" y="10" width="160" height="28" rx="4" fill="var(--surface)" className="stroke-border" strokeWidth="1.5" />
-      <text x="44" y="28" className="fill-foreground text-xs" fontWeight="600">Health Summary</text>
-      <polyline points="46,110 70,100 94,106 118,88 142,92 166,76" fill="none" stroke="var(--teal)" strokeWidth="2" />
-      <line x1="46" y1="130" x2="166" y2="130" className="stroke-border" strokeWidth="1" />
-      <line x1="46" y1="142" x2="150" y2="142" className="stroke-border" strokeWidth="1" />
-      <line x1="46" y1="154" x2="160" y2="154" className="stroke-border" strokeWidth="1" />
-      <line x1="46" y1="166" x2="130" y2="166" className="stroke-border" strokeWidth="1" />
-      <rect x="150" y="150" width="34" height="16" rx="2" fill="var(--coral)" />
-      <text x="167" y="161" textAnchor="middle" fill="var(--background)" className="text-xs" fontWeight="600">PDF</text>
-    </svg>
-  );
-}
-
 const FEATURES = [
   {
     title: "Body Score",
-    art: BodyScoreArt,
+    image: { src: "/screenshots/body-score.png", width: 998, height: 2080 },
+    alt: "The Fit Lens Body Score screen showing a 7.9 out of 10 gauge, a breakdown by body composition, activity, nutrition, and hydration, and body composition figures for body fat, muscle, visceral fat, and body water",
     body: "One number that blends composition, activity, and sleep into a single read of the week. Not a mood ring, a weighted score you can trace back to what moved it.",
   },
   {
     title: "3D body composition",
     art: AvatarArt,
+    pending: true,
     body: "Your scale readings mapped onto an annotated 3D model. Tap any region for the number behind it: fat, muscle, or visceral fat at that site.",
   },
   {
     title: "GLP-1 dashboard",
-    art: Glp1Art,
+    image: { src: "/screenshots/glp1-protocol.png", width: 980, height: 2080 },
+    alt: "The Fit Lens GLP-1 Protocol screen showing today's protein and hydration adherence, muscle and fat mass change since starting, and a written coaching note on the week's data",
     body: "Weight and lean mass tracked side by side, dosed protocol overlaid. The question isn't whether the number is dropping, it's what kind of mass you're losing.",
   },
   {
     title: "Food scanning",
-    art: FoodScanArt,
+    image: { src: "/screenshots/ai-chef.png", width: 970, height: 2080 },
+    alt: "The Fit Lens AI Chef screen with Log Food, Food Library, and Check a Product actions, and a generated 7-day high-protein meal plan with per-meal macros",
     body: "Barcode or food scale, logged in one step. Protein tracked against a target that adjusts as your weigh-ins come in, not a fixed number set once at onboarding.",
   },
   {
     title: "Health report PDF",
-    art: ReportArt,
+    image: { src: "/screenshots/health-report.png", width: 1520, height: 2080 },
+    alt: "The Fit Lens Health Summary Report PDF showing patient information, a GLP-1 medication alert, self-reported side effects, and a body composition metrics table",
     body: "A clean export of your trends for a doctor's visit or your own records. A convenience tool, not a clinical document, built to be read in under a minute.",
   },
 ];
@@ -188,25 +160,29 @@ export default function Home() {
 
         {/* Features */}
         <section id="features" className="py-16 md:py-24 scroll-mt-12">
-          {FEATURES.map((f, i) => {
-            const Art = f.art;
-            return (
-              <div
-                key={f.title}
-                className={`grid md:grid-cols-2 gap-x-16 gap-y-8 items-center border-t border-border py-12 md:py-16 ${
-                  i % 2 === 1 ? "" : ""
-                }`}
-              >
-                <div className={i % 2 === 1 ? "md:order-2" : ""}>
-                  <h2 className="text-2xl font-medium tracking-tight mb-3">{f.title}</h2>
-                  <p className="text-muted max-w-prose">{f.body}</p>
-                </div>
-                <div className={`flex justify-center md:justify-start ${i % 2 === 1 ? "md:order-1" : ""}`}>
-                  <Art />
-                </div>
+          {FEATURES.map((f, i) => (
+            <div
+              key={f.title}
+              className="grid md:grid-cols-2 gap-x-16 gap-y-8 items-center border-t border-border py-12 md:py-16"
+            >
+              <div className={i % 2 === 1 ? "md:order-2" : ""}>
+                <h2 className="text-2xl font-medium tracking-tight mb-3">{f.title}</h2>
+                <p className="text-muted max-w-prose">{f.body}</p>
+                {f.pending && (
+                  <p className="text-xs text-subtle mt-4 uppercase tracking-widest">
+                    Illustration shown, real capture pending
+                  </p>
+                )}
               </div>
-            );
-          })}
+              <div className={`flex justify-center md:justify-start ${i % 2 === 1 ? "md:order-1" : ""}`}>
+                {f.image ? (
+                  <ScreenshotFrame src={f.image.src} alt={f.alt} width={f.image.width} height={f.image.height} />
+                ) : (
+                  f.art?.()
+                )}
+              </div>
+            </div>
+          ))}
         </section>
 
         {/* FAQ */}
