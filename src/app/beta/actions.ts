@@ -17,6 +17,7 @@ async function sendSignupAlert(signup: {
   email: string;
   device_model: string | null;
   glp1_status: string | null;
+  has_required_hardware: boolean;
 }) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
@@ -37,6 +38,7 @@ async function sendSignupAlert(signup: {
         text: [
           `Email: ${signup.email}`,
           `Android: yes`,
+          `Has hardware: ${signup.has_required_hardware ? "yes" : "no"}`,
           `Device: ${signup.device_model ?? "not provided"}`,
           `GLP-1: ${signup.glp1_status ?? "not provided"}`,
           `Signed up: ${new Date().toISOString()}`,
@@ -62,6 +64,7 @@ export async function requestBetaAccess(
 
   const email = String(formData.get("email") ?? "").trim().toLowerCase();
   const hasAndroid = formData.get("has_android") === "on";
+  const hasRequiredHardware = formData.get("has_required_hardware") === "on";
   const deviceModel = String(formData.get("device_model") ?? "").trim();
   const glp1Raw = String(formData.get("glp1_status") ?? "");
 
@@ -72,6 +75,13 @@ export async function requestBetaAccess(
     return {
       status: "error",
       message: "The beta is Android-only right now. Confirm you have an Android phone.",
+    };
+  }
+  if (!hasRequiredHardware) {
+    return {
+      status: "error",
+      message:
+        "The beta requires an Etekcity Bluetooth smart scale and a Renpho Bluetooth body tape. Confirm you have both.",
     };
   }
 
@@ -96,6 +106,7 @@ export async function requestBetaAccess(
     body: JSON.stringify({
       email,
       has_android: hasAndroid,
+      has_required_hardware: hasRequiredHardware,
       device_model: deviceModel.slice(0, 120) || null,
       glp1_status: GLP1_VALUES.has(glp1Raw) ? glp1Raw : null,
     }),
@@ -112,6 +123,7 @@ export async function requestBetaAccess(
           email,
           device_model: deviceModel.slice(0, 120) || null,
           glp1_status: glp1Status,
+          has_required_hardware: hasRequiredHardware,
         })
       );
     }

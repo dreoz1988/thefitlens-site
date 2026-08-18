@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Terms of Service — The Fit Lens",
   description: "Terms of service for The Fit Lens mobile application.",
@@ -5,19 +7,24 @@ export const metadata = {
 
 export default function Terms() {
   return (
-    <main className="min-h-screen bg-white text-neutral-900 py-16 px-6">
-      <article className="max-w-3xl mx-auto">
+    <main className="min-h-screen bg-white text-neutral-900">
+      <div className="max-w-3xl mx-auto px-6 pt-8">
+        <Link href="/" className="text-sm font-semibold tracking-tight text-neutral-900 hover:text-neutral-600 transition-colors">
+          The Fit Lens
+        </Link>
+      </div>
+      <article className="max-w-3xl mx-auto px-6 py-16">
         <header className="mb-12 border-b border-neutral-200 pb-8">
-          <p className="text-sm text-neutral-500 uppercase tracking-widest mb-2">The Fit Lens</p>
+          <p className="text-sm uppercase tracking-widest mb-2 text-cyan-700">The Fit Lens</p>
           <h1 className="text-4xl font-semibold tracking-tight mb-4">Terms of Service</h1>
           <p className="text-sm text-neutral-500">Effective date: June 29, 2026</p>
           <p className="text-sm text-neutral-500 mt-1">The Fit Lens LLC &bull; Arizona Domestic Limited Liability Company &bull; ACC Business ID: 25083180</p>
-          <p className="text-sm text-neutral-500 mt-1"><a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a> &bull; thefitlens.com</p>
+          <p className="text-sm text-neutral-500 mt-1"><a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a> &bull; thefitlens.com</p>
         </header>
 
         <nav className="mb-12 p-4 bg-neutral-50 rounded-lg border border-neutral-200">
           <p className="text-sm font-semibold mb-3 text-neutral-700">Table of Contents</p>
-          <ol className="list-decimal pl-5 space-y-1 text-sm text-blue-600 columns-2">
+          <ol className="list-decimal pl-5 space-y-1 text-sm text-cyan-700 columns-2">
             <li><a href="#s1" className="hover:underline">Acceptance of Terms; Not Medical Advice; Binding Arbitration Notice</a></li>
             <li><a href="#s2" className="hover:underline">Privacy Policy</a></li>
             <li><a href="#s3" className="hover:underline">Eligibility and Use of the Services</a></li>
@@ -98,7 +105,7 @@ export default function Terms() {
             <h3 className="text-lg font-semibold mt-4 mb-2">4.1 Accuracy of Information</h3>
             <p>You agree to provide true, accurate, current, and complete information during registration and at all times thereafter. Registration information may include your name, email address, date of birth, biological sex, height, and starting body composition metrics. You are responsible for maintaining the accuracy of your account information and must promptly update it whenever it changes.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">4.2 Account Security</h3>
-            <p>You are solely responsible for maintaining the confidentiality and security of your account credentials, including your password. You agree to: (a) select a strong, unique password and not share it with any third party; (b) log out of your account when using a shared or public device; and (c) notify us immediately at <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a> if you become aware of any unauthorized use of your account or any other security breach.</p>
+            <p>You are solely responsible for maintaining the confidentiality and security of your account credentials, including your password. You agree to: (a) select a strong, unique password and not share it with any third party; (b) log out of your account when using a shared or public device; and (c) notify us immediately at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a> if you become aware of any unauthorized use of your account or any other security breach.</p>
             <p className="mt-3">The Fit Lens LLC will not be liable for any loss or damage arising from your failure to maintain the security of your account credentials or from any unauthorized access to your account resulting from your failure to comply with these security obligations.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">4.3 Account Responsibility</h3>
             <p>You are fully responsible for all activity that occurs under your account, whether authorized by you or not, except to the extent caused by our breach of these Terms or negligence. If you permit any third party to access your account, you remain fully responsible for all activity conducted under your account by that third party.</p>
@@ -271,7 +278,7 @@ export default function Terms() {
               <li>Your physical or electronic signature</li>
             </ul>
             <h3 className="text-lg font-semibold mt-4 mb-2">11.3 DMCA Agent Contact</h3>
-            <p>DMCA Notices should be sent to: <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a> with the subject line &quot;DMCA Notice.&quot;</p>
+            <p>DMCA Notices should be sent to: <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a> with the subject line &quot;DMCA Notice.&quot;</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">11.4 Counter-Notification</h3>
             <p>If you believe your content was removed due to mistake or misidentification, you may send a counter-notification to our DMCA agent containing: your name, address, phone number, and email; identification of the removed content and its prior location; a statement under penalty of perjury that the removal was a mistake or misidentification; your consent to jurisdiction of the federal district court for your location; and your signature. Upon receiving a valid counter-notification, we will provide a copy to the original complainant and, if no court action is filed within ten business days, may restore the content.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">11.5 Repeat Infringers</h3>
@@ -323,7 +330,7 @@ export default function Terms() {
             <h3 className="text-lg font-semibold mt-4 mb-2">15.1 Termination by Us</h3>
             <p>The Fit Lens LLC reserves the right to suspend or terminate your access to all or any part of the Services, or to terminate these Terms, at any time and for any reason, with or without notice, and without liability to you. Without limiting the foregoing, we may terminate your account immediately if we believe, in our sole discretion, that: (a) you have violated any provision of these Terms; (b) you have provided false, fraudulent, or misleading registration information; (c) you have engaged in conduct that may harm other users, the Services, or us; or (d) continued provision of the Services to you creates legal, regulatory, or reputational risk for us.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">15.2 Termination by You</h3>
-            <p>You may close your account at any time by contacting us at <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a> or, where available, through the account management settings within the Services. Termination of your account is your sole remedy if you are dissatisfied with the Services or any change to them.</p>
+            <p>You may close your account at any time by contacting us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a> or, where available, through the account management settings within the Services. Termination of your account is your sole remedy if you are dissatisfied with the Services or any change to them.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">15.3 Effect of Termination</h3>
             <p>Upon termination of your account or these Terms for any reason: (a) your right to access and use the Services will immediately cease; (b) we may delete your account data in accordance with our Privacy Policy; and (c) any provisions of these Terms that by their nature should survive termination will survive, including without limitation:</p>
             <ul className="list-disc pl-6 space-y-2 mt-3">
@@ -423,14 +430,14 @@ export default function Terms() {
             <h3 className="text-lg font-semibold mt-4 mb-2">20.1 Governing Law</h3>
             <p>Except as otherwise required by applicable law, these Terms and all disputes, claims, or controversies arising out of or relating to them or to the Services (collectively, &quot;Disputes&quot;) shall be governed by and construed in accordance with the laws of the State of Arizona, without regard to its conflict of law principles. The United Nations Convention on Contracts for the International Sale of Goods does not apply.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">20.2 Informal Dispute Resolution</h3>
-            <p>Before initiating any formal legal proceeding, you agree to attempt to resolve any Dispute informally. To initiate informal resolution, contact us at <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a> with the subject line &quot;Dispute Notice&quot; and describe the nature of your dispute, the relief you are seeking, and your contact information. We will attempt to resolve the Dispute through good-faith negotiation within thirty (30) days of receiving your notice. If the Dispute is not resolved within thirty (30) days of submission (or such extended period as you and we mutually agree in writing), either party may proceed to formal arbitration as set forth below. Completion of this informal dispute resolution process is a prerequisite to initiating arbitration.</p>
+            <p>Before initiating any formal legal proceeding, you agree to attempt to resolve any Dispute informally. To initiate informal resolution, contact us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a> with the subject line &quot;Dispute Notice&quot; and describe the nature of your dispute, the relief you are seeking, and your contact information. We will attempt to resolve the Dispute through good-faith negotiation within thirty (30) days of receiving your notice. If the Dispute is not resolved within thirty (30) days of submission (or such extended period as you and we mutually agree in writing), either party may proceed to formal arbitration as set forth below. Completion of this informal dispute resolution process is a prerequisite to initiating arbitration.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">20.3 Binding Individual Arbitration</h3>
             <p>YOU AND THE FIT LENS LLC AGREE THAT ALL DISPUTES THAT CANNOT BE RESOLVED THROUGH INFORMAL DISPUTE RESOLUTION UNDER SECTION 20.2 WILL BE RESOLVED THROUGH FINAL AND BINDING INDIVIDUAL ARBITRATION, RATHER THAN IN COURT, EXCEPT AS PROVIDED IN SECTIONS 20.5 AND 20.6.</p>
             <p className="mt-3">The arbitration will be administered by the American Arbitration Association (&quot;AAA&quot;) under its Consumer Arbitration Rules, which are available at www.adr.org or by calling the AAA at 1-800-778-7879. The arbitration will be conducted in Phoenix, Arizona, or by remote means if mutually agreed. The arbitrator will be selected pursuant to the AAA Consumer Arbitration Rules.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">20.4 Arbitration Fees and Costs</h3>
             <p>You will be responsible for paying the AAA&rsquo;s initial filing fee (currently $200 for claims up to $10,000 under the AAA Consumer Arbitration Rules). The Fit Lens LLC will pay all remaining AAA administrative fees, arbitrator compensation, and other arbitration costs. If the arbitrator determines that your claim was frivolous or brought in bad faith, the arbitrator may award us our fees and costs. Each party is responsible for its own attorney fees, except as otherwise awarded by the arbitrator pursuant to applicable law.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">20.5 Opt-Out Right</h3>
-            <p>You have the right to opt out of this arbitration agreement. To opt out, you must send written notice of your decision to opt out to <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a> with the subject line &quot;Arbitration Opt-Out&quot; within thirty (30) days of the date you first agree to these Terms. Your notice must include your full name, email address associated with your account, and a clear statement that you are opting out of the arbitration agreement. If you opt out of arbitration, all Disputes will be resolved in accordance with Section 20.7 (Judicial Forum). Opting out of arbitration does not affect any other provision of these Terms.</p>
+            <p>You have the right to opt out of this arbitration agreement. To opt out, you must send written notice of your decision to opt out to <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a> with the subject line &quot;Arbitration Opt-Out&quot; within thirty (30) days of the date you first agree to these Terms. Your notice must include your full name, email address associated with your account, and a clear statement that you are opting out of the arbitration agreement. If you opt out of arbitration, all Disputes will be resolved in accordance with Section 20.7 (Judicial Forum). Opting out of arbitration does not affect any other provision of these Terms.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">20.6 Class Action Waiver</h3>
             <p>YOU AND THE FIT LENS LLC AGREE THAT EACH PARTY MAY BRING CLAIMS AGAINST THE OTHER ONLY IN AN INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, COLLECTIVE, CONSOLIDATED, OR REPRESENTATIVE ACTION OR PROCEEDING. THE ARBITRATOR MAY NOT CONSOLIDATE CLAIMS OF MORE THAN ONE PERSON, MAY NOT PRESIDE OVER ANY FORM OF A REPRESENTATIVE OR CLASS PROCEEDING, AND MAY AWARD RELIEF ONLY IN FAVOR OF THE INDIVIDUAL PARTY SEEKING RELIEF AND ONLY TO THE EXTENT NECESSARY TO PROVIDE RELIEF WARRANTED BY THAT PARTY&rsquo;S INDIVIDUAL CLAIM.</p>
             <p className="mt-3">If a court of competent jurisdiction determines that the class action waiver in this Section 20.6 is unenforceable, then the entirety of this arbitration agreement will be null and void, and all Disputes will be resolved in a court of competent jurisdiction in accordance with Section 20.7.</p>
@@ -474,17 +481,27 @@ export default function Terms() {
             <h3 className="text-lg font-semibold mt-4 mb-2">23.5 Assignment</h3>
             <p>You may not assign, delegate, transfer, or sublicense any of your rights or obligations under these Terms without our prior written consent. Any attempted assignment without such consent is null and void. The Fit Lens LLC may freely assign, transfer, or delegate these Terms and any of its rights and obligations hereunder, including in connection with a merger, acquisition, sale of assets, reorganization, or other corporate transaction, without your consent. These Terms will be binding upon and inure to the benefit of the parties and their respective permitted successors and assigns.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">23.6 Notices</h3>
-            <p>All notices, requests, demands, or other communications to The Fit Lens LLC under these Terms must be submitted by email to: <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a>. Notices from us to you will be provided through the Services, by email to the address associated with your account, or by other reasonable means. Notices are effective upon delivery.</p>
+            <p>All notices, requests, demands, or other communications to The Fit Lens LLC under these Terms must be submitted by email to: <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a>. Notices from us to you will be provided through the Services, by email to the address associated with your account, or by other reasonable means. Notices are effective upon delivery.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">23.7 Force Majeure</h3>
             <p>The Fit Lens LLC will not be liable for any failure or delay in performance of its obligations under these Terms arising from causes beyond its reasonable control, including acts of God, natural disasters, pandemic or epidemic, war, terrorism, civil unrest, governmental action, power failures, telecommunications failures, or internet outages.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">23.8 Contact Information</h3>
             <p>If you have any questions, concerns, or complaints regarding these Terms, please contact us at:</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">The Fit Lens LLC</h3>
-            <p>Email: <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a></p>
+            <p>Email: <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a></p>
             <p className="mt-3">Website: thefitlens.com</p>
           </section>
 
         </div>
+
+        <footer className="mt-12 pt-8 border-t border-neutral-200">
+          <p className="text-sm text-neutral-500">The Fit Lens LLC • Arizona Domestic Limited Liability Company • ACC Business ID: 25083180</p>
+          <p className="text-sm text-neutral-500 mt-4 flex flex-wrap gap-x-6 gap-y-2">
+            <Link href="/" className="hover:text-neutral-900 transition-colors">Home</Link>
+            <Link href="/privacy" className="hover:text-neutral-900 transition-colors">Privacy Policy</Link>
+            <Link href="/about" className="hover:text-neutral-900 transition-colors">About</Link>
+            <Link href="/beta" className="hover:text-neutral-900 transition-colors">Request beta access</Link>
+          </p>
+        </footer>
       </article>
     </main>
   );

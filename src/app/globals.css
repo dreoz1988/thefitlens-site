@@ -1,27 +1,44 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  /* Interactive/CTA: monochrome inversion (2026-07-10) - white fill, near-black text. Gold retired. */
-  --inverse: #ffffff;
-  --inverse-dim: #a3a3a3;
+  /* Committed dark identity — not a light/dark switch. Health data read at
+     a desk or in bed; calm and serious reads better dark, same call Whoop
+     and Oura make. Neutrals tinted slightly toward the teal hue rather
+     than pure black/white. */
+  --background: oklch(16% 0.011 227);
+  --surface: oklch(21% 0.013 227);
+  --foreground: oklch(96% 0.004 227);
+  --muted: oklch(72% 0.018 227);
+  --subtle: oklch(48% 0.02 227);
+  --border: oklch(31% 0.018 227);
+
+  /* Interactive: solid inversion, no gradient, no gimmick. */
+  --inverse: oklch(96% 0.004 227);
+  --inverse-dim: var(--muted);
+
+  /* Data accents — reused from the app's own metric colors, not a fresh
+     marketing palette. Each carries a fixed meaning; see DESIGN.md. */
+  --teal: #06b6d4; /* muscle / primary interactive */
+  --coral: #fb7185; /* fat mass */
+  --azure: #3b82f6; /* secondary accent / links */
+  --amber: #f5b82e; /* visceral fat / flagged metric */
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
   --color-inverse: var(--inverse);
   --color-inverse-dim: var(--inverse-dim);
+  --color-teal: var(--teal);
+  --color-coral: var(--coral);
+  --color-azure: var(--azure);
+  --color-amber: var(--amber);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {

@@ -29,12 +29,19 @@ Confident, terse, declarative. The homepage sets the register:
 
 ## Visual identity
 
-- Monochrome + gold. Near-black surfaces, neutral grays, one warm gold
-  accent used sparingly (data, the conversion moment).
+- Monochrome + four data accents. Near-black surfaces (OKLCH-tinted, not
+  pure #000), neutral grays tinted toward the same hue. Gold (retired
+  2026-07-10) is gone; teal `#06B6D4` is now primary interactive (CTAs,
+  links, focus states). Coral `#FB7185`, azure `#3B82F6`, and amber
+  `#F5B82E` are reused from the app's own metric colors, each with a
+  fixed meaning, not decorative: teal = muscle / primary, coral = fat
+  mass, amber = visceral fat / flagged metric, azure = secondary accent.
+  Updated 2026-08-17.
 - Geist sans throughout, tight tracking on display sizes, strong
   weight/scale contrast.
 - Imagery is data made visual (charts, composition), never lifestyle
-  stock photography.
+  stock photography. The composition chart and metric callouts should
+  reuse the same four accent colors as the app, not a fresh palette.
 
 ## Anti-references
 

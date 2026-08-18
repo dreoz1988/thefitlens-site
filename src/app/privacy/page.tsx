@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Privacy Policy — The Fit Lens",
   description: "Privacy policy for The Fit Lens mobile application.",
@@ -5,13 +7,18 @@ export const metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <main className="min-h-screen bg-white text-neutral-900 py-16 px-6">
-      <article className="max-w-3xl mx-auto">
+    <main className="min-h-screen bg-white text-neutral-900">
+      <div className="max-w-3xl mx-auto px-6 pt-8">
+        <Link href="/" className="text-sm font-semibold tracking-tight text-neutral-900 hover:text-neutral-600 transition-colors">
+          The Fit Lens
+        </Link>
+      </div>
+      <article className="max-w-3xl mx-auto px-6 py-16">
         <header className="mb-12 border-b border-neutral-200 pb-8">
-          <p className="text-sm text-neutral-500 uppercase tracking-widest mb-2">The Fit Lens</p>
+          <p className="text-sm uppercase tracking-widest mb-2 text-cyan-700">The Fit Lens</p>
           <h1 className="text-4xl font-semibold tracking-tight mb-4">Privacy Policy</h1>
           <p className="text-sm text-neutral-500">Effective date: June 28, 2026</p>
-          <p className="text-sm text-neutral-500 mt-1">Operated by: The Fit Lens LLC &bull; <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a></p>
+          <p className="text-sm text-neutral-500 mt-1">Operated by: The Fit Lens LLC &bull; <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a></p>
         </header>
 
         <div className="space-y-8 leading-relaxed">
@@ -215,13 +222,13 @@ export default function PrivacyPolicy() {
               <li>Correct inaccurate personal data</li>
               <li>Delete your personal data (subject to legal retention obligations)</li>
             </ul>
-            <p className="mt-3">To submit a request, contact us at <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a>.</p>
+            <p className="mt-3">To submit a request, contact us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a>.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">10B. Data Portability</h3>
             <p>Where technically feasible, we will provide your personal data in a machine-readable, portable format upon request.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">10C. Withdrawal of Health Connect Permissions</h3>
             <p>You may revoke the Services&rsquo; access to Health Connect data at any time through your Android device&rsquo;s Health Connect settings. Revoking permissions will limit certain features of the Services that depend on that data.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">10D. Account Deletion</h3>
-            <p>You may delete your account at any time by contacting us at <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a> or through account settings within the Services. Upon deletion, we will remove your personal data subject to our retention obligations described in Section 6.</p>
+            <p>You may delete your account at any time by contacting us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a> or through account settings within the Services. Upon deletion, we will remove your personal data subject to our retention obligations described in Section 6.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">10E. Marketing Communications</h3>
             <p>If we send marketing emails, you may unsubscribe via the opt-out link in any such email. We will continue to send transactional and service-related communications.</p>
           </section>
@@ -238,7 +245,7 @@ export default function PrivacyPolicy() {
               <li>Right to Limit Use of Sensitive Personal Information: you may request that we limit use of your sensitive personal information (including health data) to purposes necessary to provide the Services</li>
               <li>Right to Non-Discrimination: we will not discriminate against you for exercising your CCPA rights</li>
             </ul>
-            <p className="mt-3">To submit a CCPA request, contact us at <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a>. We will respond within 45 days. We may need to verify your identity before processing your request.</p>
+            <p className="mt-3">To submit a CCPA request, contact us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a>. We will respond within 45 days. We may need to verify your identity before processing your request.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">11B. Washington Residents (My Health My Data Act)</h3>
             <p>Washington State&rsquo;s My Health My Data Act (RCW Chapter 19.373, effective March 31, 2024) provides Washington residents with rights specific to consumer health data, including body composition, biometric, and activity data collected by the Services. The Act applies to any entity that processes consumer health data about Washington residents, regardless of company size or revenue thresholds.</p>
             <p className="mt-3">Washington residents have the following rights:</p>
@@ -248,7 +255,7 @@ export default function PrivacyPolicy() {
               <li>Right to delete your consumer health data</li>
               <li>Right to withdraw consent to the collection or sharing of consumer health data</li>
             </ul>
-            <p className="mt-3">To exercise your Washington consumer health data rights, contact us at <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a>.</p>
+            <p className="mt-3">To exercise your Washington consumer health data rights, contact us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a>.</p>
             <p className="mt-3">Important: The Washington MHMD Act requires affirmative opt-in consent, separate from any general terms of use acceptance, before we may collect or share consumer health data beyond what is strictly necessary to provide the Services you request. This consent must be obtained prior to collection and must clearly disclose the categories of data collected, the purpose, and how consent may be withdrawn.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">11C. Nevada Residents (Consumer Health Data Privacy Act)</h3>
             <p>Nevada&rsquo;s Consumer Health Data Privacy Act (NRS Chapter 603C, effective March 31, 2024) provides Nevada residents with rights regarding consumer health data.</p>
@@ -257,15 +264,15 @@ export default function PrivacyPolicy() {
               <li>Right to delete your consumer health data</li>
               <li>Right to withdraw consent</li>
             </ul>
-            <p className="mt-3">To exercise your Nevada consumer health data rights, contact us at <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a>.</p>
+            <p className="mt-3">To exercise your Nevada consumer health data rights, contact us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a>.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">11D. Other State Residents</h3>
-            <p>Residents of Colorado, Connecticut, Virginia, Texas, Oregon, and other states with comprehensive privacy laws may have rights to access, correct, delete, and opt out of certain processing of their personal data. Contact us at <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a> to exercise applicable rights.</p>
+            <p>Residents of Colorado, Connecticut, Virginia, Texas, Oregon, and other states with comprehensive privacy laws may have rights to access, correct, delete, and opt out of certain processing of their personal data. Contact us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a> to exercise applicable rights.</p>
           </section>
 
           <section id="s12">
             <h2 className="text-2xl font-semibold mb-3">12. Children&rsquo;s Privacy</h2>
             <p>The Services are not directed to individuals under the age of 18. We do not knowingly collect personal data from anyone under 18. If we become aware that we have collected personal data from a minor without verifiable parental consent, we will take steps to delete that information promptly.</p>
-            <p className="mt-3">If you believe we have inadvertently collected data from a minor, please contact us at <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a>.</p>
+            <p className="mt-3">If you believe we have inadvertently collected data from a minor, please contact us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a>.</p>
           </section>
 
           <section id="s13">
@@ -282,7 +289,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl font-semibold mb-3">15. How to Contact Us</h2>
             <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">The Fit Lens LLC</h3>
-            <p>Email: <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a></p>
+            <p>Email: <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a></p>
             <p className="mt-3">Website: thefitlens.com</p>
           </section>
 
@@ -560,11 +567,11 @@ export default function PrivacyPolicy() {
               <li>Delete your consumer health data</li>
               <li>Withdraw your consent to the collection or sharing of consumer health data</li>
             </ul>
-            <p className="mt-3">To exercise these rights, contact us at: <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a></p>
+            <p className="mt-3">To exercise these rights, contact us at: <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a></p>
             <h3 className="text-lg font-semibold mt-4 mb-2">Consent</h3>
             <p>We obtain your affirmative, opt-in consent before collecting consumer health data beyond what is strictly necessary to provide the Services you request. Consent for collection and consent for sharing are obtained separately. Consent may not be bundled with acceptance of our Terms of Service or this Privacy Policy.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">How to Appeal</h3>
-            <p>You may appeal our decision with respect to a request by contacting us at: <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a>.</p>
+            <p>You may appeal our decision with respect to a request by contacting us at: <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a>.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">Changes to This Notice</h3>
             <p>We will notify you of significant changes to this Notice. Please check this Notice periodically for updates.</p>
           </section>
@@ -587,13 +594,19 @@ export default function PrivacyPolicy() {
             <p>We share consumer health data only with service providers operating under Data Processing Agreements, healthcare providers upon your explicit request, and government agencies as required by law. We do not sell consumer health data.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">Your Nevada Consumer Health Data Rights</h3>
             <p>Nevada residents have the right to: (1) confirm whether we have collected your consumer health data; (2) confirm whether we have disclosed or sold your consumer health data; (3) delete your consumer health data; and (4) withdraw your consent.</p>
-            <p className="mt-3">Contact us at: <a href="mailto:support@thefitlens.com" className="text-blue-600 underline">support@thefitlens.com</a></p>
+            <p className="mt-3">Contact us at: <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a></p>
           </section>
 
         </div>
 
         <footer className="mt-12 pt-8 border-t border-neutral-200">
           <p className="text-sm text-neutral-500">The Fit Lens LLC • Arizona Domestic Limited Liability Company • ACC Business ID: 25083180</p>
+          <p className="text-sm text-neutral-500 mt-4 flex flex-wrap gap-x-6 gap-y-2">
+            <Link href="/" className="hover:text-neutral-900 transition-colors">Home</Link>
+            <Link href="/terms" className="hover:text-neutral-900 transition-colors">Terms of Service</Link>
+            <Link href="/about" className="hover:text-neutral-900 transition-colors">About</Link>
+            <Link href="/beta" className="hover:text-neutral-900 transition-colors">Request beta access</Link>
+          </p>
         </footer>
       </article>
     </main>
