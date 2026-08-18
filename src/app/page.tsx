@@ -38,28 +38,46 @@ function ScreenshotFrame({
   );
 }
 
+// Cropped from a real Body Avatar capture (wireframe mesh only — the
+// original screen's numeric callouts are excluded from the crop, not
+// masked, since they showed one real person's flagged health metrics).
+// Labels below are a fresh overlay with the same demo figures already
+// shown in the Body Score / Health Report sections on this page.
 function AvatarArt() {
   return (
-    <svg viewBox="0 0 300 220" role="img" aria-label="Annotated body outline with muscle, fat, and visceral fat markers" className="w-full h-auto max-w-xs">
-      <circle cx="110" cy="34" r="16" fill="none" className="stroke-subtle" strokeWidth="1.5" />
-      <path
-        d="M85,52 C70,60 66,90 70,120 L78,180 L96,180 L100,120 L120,120 L124,180 L142,180 L150,120 C154,90 150,60 135,52 C122,44 98,44 85,52 Z"
-        fill="none"
-        className="stroke-subtle"
-        strokeWidth="1.5"
-      />
-      <circle cx="110" cy="75" r="3" fill="var(--teal)" />
-      <line x1="113" y1="75" x2="180" y2="60" className="stroke-border" strokeWidth="1" />
-      <text x="184" y="64" fill="var(--teal)" className="text-xs">Muscle</text>
+    <div className="relative w-full max-w-[240px]" style={{ aspectRatio: "390 / 1258" }}>
+      <div
+        className="absolute inset-0 rounded-[2rem] border border-border overflow-hidden"
+        style={{ background: "var(--surface)" }}
+      >
+        <Image
+          src="/screenshots/body-avatar.png"
+          alt="A real 3D wireframe render of a body from The Fit Lens app, annotated with muscle, fat, and visceral fat callouts"
+          fill
+          sizes="240px"
+          className="object-cover"
+        />
+      </div>
+      <svg viewBox="0 0 390 1258" className="absolute inset-0 w-full h-full pointer-events-none">
+        <circle cx="70" cy="458" r="7" fill="var(--teal)" />
+        <line x1="78" y1="456" x2="200" y2="395" stroke="var(--border)" strokeWidth="2" />
+        <rect x="196" y="360" width="150" height="66" rx="10" fill="var(--background)" opacity="0.92" />
+        <text x="210" y="384" fill="var(--teal)" fontSize="24">Muscle</text>
+        <text x="210" y="414" fill="var(--foreground)" fontSize="28" fontWeight="600">134.6 lbs</text>
 
-      <circle cx="112" cy="105" r="3" fill="var(--coral)" />
-      <line x1="115" y1="105" x2="180" y2="105" className="stroke-border" strokeWidth="1" />
-      <text x="184" y="109" fill="var(--coral)" className="text-xs">Fat</text>
+        <circle cx="150" cy="592" r="7" fill="var(--coral)" />
+        <line x1="158" y1="592" x2="200" y2="592" stroke="var(--border)" strokeWidth="2" />
+        <rect x="196" y="557" width="120" height="66" rx="10" fill="var(--background)" opacity="0.92" />
+        <text x="210" y="581" fill="var(--coral)" fontSize="24">Fat</text>
+        <text x="210" y="611" fill="var(--foreground)" fontSize="28" fontWeight="600">17.6%</text>
 
-      <circle cx="108" cy="128" r="3" fill="var(--amber)" />
-      <line x1="111" y1="128" x2="180" y2="150" className="stroke-border" strokeWidth="1" />
-      <text x="184" y="154" fill="var(--amber)" className="text-xs">Visceral fat</text>
-    </svg>
+        <circle cx="248" cy="635" r="7" fill="var(--amber)" />
+        <line x1="244" y1="642" x2="200" y2="725" stroke="var(--border)" strokeWidth="2" />
+        <rect x="196" y="717" width="150" height="66" rx="10" fill="var(--background)" opacity="0.92" />
+        <text x="210" y="741" fill="var(--amber)" fontSize="24">Visceral fat</text>
+        <text x="210" y="771" fill="var(--foreground)" fontSize="28" fontWeight="600">Level 6</text>
+      </svg>
+    </div>
   );
 }
 
@@ -73,7 +91,6 @@ const FEATURES = [
   {
     title: "3D body composition",
     art: AvatarArt,
-    pending: true,
     body: "Your scale readings mapped onto an annotated 3D model. Tap any region for the number behind it: fat, muscle, or visceral fat at that site.",
   },
   {
@@ -168,11 +185,6 @@ export default function Home() {
               <div className={i % 2 === 1 ? "md:order-2" : ""}>
                 <h2 className="text-2xl font-medium tracking-tight mb-3">{f.title}</h2>
                 <p className="text-muted max-w-prose">{f.body}</p>
-                {f.pending && (
-                  <p className="text-xs text-subtle mt-4 uppercase tracking-widest">
-                    Illustration shown, real capture pending
-                  </p>
-                )}
               </div>
               <div className={`flex justify-center md:justify-start ${i % 2 === 1 ? "md:order-1" : ""}`}>
                 {f.image ? (
