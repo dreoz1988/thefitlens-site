@@ -76,6 +76,7 @@ export default function About() {
 
         <footer className="border-t border-border py-10 text-xs text-subtle flex flex-wrap gap-x-6 gap-y-2 items-center">
           <Link href="/" className="hover:text-muted transition-colors">Home</Link>
+          <Link href="/feedback" className="hover:text-muted transition-colors">Beta Feedback</Link>
           <Link href="/privacy" className="hover:text-muted transition-colors">Privacy Policy</Link>
           <Link href="/terms" className="hover:text-muted transition-colors">Terms of Service</Link>
           <a href="mailto:support@thefitlens.com" className="hover:text-muted transition-colors">

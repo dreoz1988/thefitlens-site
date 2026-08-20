@@ -499,6 +499,7 @@ export default function Terms() {
             <Link href="/" className="hover:text-neutral-900 transition-colors">Home</Link>
             <Link href="/privacy" className="hover:text-neutral-900 transition-colors">Privacy Policy</Link>
             <Link href="/about" className="hover:text-neutral-900 transition-colors">About</Link>
+            <Link href="/feedback" className="hover:text-neutral-900 transition-colors">Beta Feedback</Link>
             <Link href="/beta" className="hover:text-neutral-900 transition-colors">Request beta access</Link>
           </p>
         </footer>

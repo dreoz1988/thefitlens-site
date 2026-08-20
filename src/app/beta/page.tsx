@@ -236,6 +236,7 @@ export default function BetaPage() {
         <footer className="border-t border-border py-10 text-xs text-subtle flex flex-wrap gap-x-6 gap-y-2 items-center">
           <Link href="/" className="hover:text-muted transition-colors">Home</Link>
           <Link href="/about" className="hover:text-muted transition-colors">About</Link>
+          <Link href="/feedback" className="hover:text-muted transition-colors">Beta Feedback</Link>
           <a href="/privacy" className="hover:text-muted transition-colors">Privacy Policy</a>
           <a href="/terms" className="hover:text-muted transition-colors">Terms of Service</a>
           <a href="mailto:support@thefitlens.com" className="hover:text-muted transition-colors">

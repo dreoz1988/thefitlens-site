@@ -605,6 +605,7 @@ export default function PrivacyPolicy() {
             <Link href="/" className="hover:text-neutral-900 transition-colors">Home</Link>
             <Link href="/terms" className="hover:text-neutral-900 transition-colors">Terms of Service</Link>
             <Link href="/about" className="hover:text-neutral-900 transition-colors">About</Link>
+            <Link href="/feedback" className="hover:text-neutral-900 transition-colors">Beta Feedback</Link>
             <Link href="/beta" className="hover:text-neutral-900 transition-colors">Request beta access</Link>
           </p>
         </footer>
