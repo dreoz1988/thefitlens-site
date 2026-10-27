@@ -1,24 +1,24 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Privacy Policy — The Fit Lens",
+  title: "Privacy Policy | The Fit Lens",
   description: "Privacy policy for The Fit Lens mobile application.",
 };
 
 export default function PrivacyPolicy() {
   return (
-    <main className="min-h-screen bg-white text-neutral-900">
+    <main id="main" tabIndex={-1} className="min-h-screen bg-background text-foreground focus:outline-none">
       <div className="max-w-3xl mx-auto px-6 pt-8">
-        <Link href="/" className="text-sm font-semibold tracking-tight text-neutral-900 hover:text-neutral-600 transition-colors">
+        <Link href="/" className="inline-flex min-h-11 items-center text-sm font-semibold tracking-tight text-foreground hover:text-muted transition-colors">
           The Fit Lens
         </Link>
       </div>
       <article className="max-w-3xl mx-auto px-6 py-16">
-        <header className="mb-12 border-b border-neutral-200 pb-8">
-          <p className="text-sm uppercase tracking-widest mb-2 text-cyan-700">The Fit Lens</p>
+        <header className="mb-12 border-b border-border pb-8">
+          <p className="text-sm uppercase tracking-widest mb-2 text-[var(--teal)]">The Fit Lens</p>
           <h1 className="text-4xl font-semibold tracking-tight mb-4">Privacy Policy</h1>
-          <p className="text-sm text-neutral-500">Effective date: June 28, 2026</p>
-          <p className="text-sm text-neutral-500 mt-1">Operated by: The Fit Lens LLC &bull; <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a></p>
+          <p className="text-sm text-muted">Effective date: June 28, 2026</p>
+          <p className="text-sm text-muted mt-1">Operated by: The Fit Lens LLC &bull; <a href="mailto:support@thefitlens.com" className="text-[var(--teal)] underline">support@thefitlens.com</a></p>
         </header>
 
         <div className="space-y-8 leading-relaxed">
@@ -222,13 +222,13 @@ export default function PrivacyPolicy() {
               <li>Correct inaccurate personal data</li>
               <li>Delete your personal data (subject to legal retention obligations)</li>
             </ul>
-            <p className="mt-3">To submit a request, contact us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a>.</p>
+            <p className="mt-3">To submit a request, contact us at <a href="mailto:support@thefitlens.com" className="text-[var(--teal)] underline">support@thefitlens.com</a>.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">10B. Data Portability</h3>
             <p>Where technically feasible, we will provide your personal data in a machine-readable, portable format upon request.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">10C. Withdrawal of Health Connect Permissions</h3>
             <p>You may revoke the Services&rsquo; access to Health Connect data at any time through your Android device&rsquo;s Health Connect settings. Revoking permissions will limit certain features of the Services that depend on that data.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">10D. Account Deletion</h3>
-            <p>You may delete your account at any time by contacting us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a> or through account settings within the Services. Upon deletion, we will remove your personal data subject to our retention obligations described in Section 6.</p>
+            <p>You may delete your account at any time by contacting us at <a href="mailto:support@thefitlens.com" className="text-[var(--teal)] underline">support@thefitlens.com</a> or through account settings within the Services. Upon deletion, we will remove your personal data subject to our retention obligations described in Section 6.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">10E. Marketing Communications</h3>
             <p>If we send marketing emails, you may unsubscribe via the opt-out link in any such email. We will continue to send transactional and service-related communications.</p>
           </section>
@@ -245,7 +245,7 @@ export default function PrivacyPolicy() {
               <li>Right to Limit Use of Sensitive Personal Information: you may request that we limit use of your sensitive personal information (including health data) to purposes necessary to provide the Services</li>
               <li>Right to Non-Discrimination: we will not discriminate against you for exercising your CCPA rights</li>
             </ul>
-            <p className="mt-3">To submit a CCPA request, contact us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a>. We will respond within 45 days. We may need to verify your identity before processing your request.</p>
+            <p className="mt-3">To submit a CCPA request, contact us at <a href="mailto:support@thefitlens.com" className="text-[var(--teal)] underline">support@thefitlens.com</a>. We will respond within 45 days. We may need to verify your identity before processing your request.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">11B. Washington Residents (My Health My Data Act)</h3>
             <p>Washington State&rsquo;s My Health My Data Act (RCW Chapter 19.373, effective March 31, 2024) provides Washington residents with rights specific to consumer health data, including body composition, biometric, and activity data collected by the Services. The Act applies to any entity that processes consumer health data about Washington residents, regardless of company size or revenue thresholds.</p>
             <p className="mt-3">Washington residents have the following rights:</p>
@@ -255,7 +255,7 @@ export default function PrivacyPolicy() {
               <li>Right to delete your consumer health data</li>
               <li>Right to withdraw consent to the collection or sharing of consumer health data</li>
             </ul>
-            <p className="mt-3">To exercise your Washington consumer health data rights, contact us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a>.</p>
+            <p className="mt-3">To exercise your Washington consumer health data rights, contact us at <a href="mailto:support@thefitlens.com" className="text-[var(--teal)] underline">support@thefitlens.com</a>.</p>
             <p className="mt-3">Important: The Washington MHMD Act requires affirmative opt-in consent, separate from any general terms of use acceptance, before we may collect or share consumer health data beyond what is strictly necessary to provide the Services you request. This consent must be obtained prior to collection and must clearly disclose the categories of data collected, the purpose, and how consent may be withdrawn.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">11C. Nevada Residents (Consumer Health Data Privacy Act)</h3>
             <p>Nevada&rsquo;s Consumer Health Data Privacy Act (NRS Chapter 603C, effective March 31, 2024) provides Nevada residents with rights regarding consumer health data.</p>
@@ -264,15 +264,15 @@ export default function PrivacyPolicy() {
               <li>Right to delete your consumer health data</li>
               <li>Right to withdraw consent</li>
             </ul>
-            <p className="mt-3">To exercise your Nevada consumer health data rights, contact us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a>.</p>
+            <p className="mt-3">To exercise your Nevada consumer health data rights, contact us at <a href="mailto:support@thefitlens.com" className="text-[var(--teal)] underline">support@thefitlens.com</a>.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">11D. Other State Residents</h3>
-            <p>Residents of Colorado, Connecticut, Virginia, Texas, Oregon, and other states with comprehensive privacy laws may have rights to access, correct, delete, and opt out of certain processing of their personal data. Contact us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a> to exercise applicable rights.</p>
+            <p>Residents of Colorado, Connecticut, Virginia, Texas, Oregon, and other states with comprehensive privacy laws may have rights to access, correct, delete, and opt out of certain processing of their personal data. Contact us at <a href="mailto:support@thefitlens.com" className="text-[var(--teal)] underline">support@thefitlens.com</a> to exercise applicable rights.</p>
           </section>
 
           <section id="s12">
             <h2 className="text-2xl font-semibold mb-3">12. Children&rsquo;s Privacy</h2>
             <p>The Services are not directed to individuals under the age of 18. We do not knowingly collect personal data from anyone under 18. If we become aware that we have collected personal data from a minor without verifiable parental consent, we will take steps to delete that information promptly.</p>
-            <p className="mt-3">If you believe we have inadvertently collected data from a minor, please contact us at <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a>.</p>
+            <p className="mt-3">If you believe we have inadvertently collected data from a minor, please contact us at <a href="mailto:support@thefitlens.com" className="text-[var(--teal)] underline">support@thefitlens.com</a>.</p>
           </section>
 
           <section id="s13">
@@ -289,26 +289,26 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl font-semibold mb-3">15. How to Contact Us</h2>
             <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">The Fit Lens LLC</h3>
-            <p>Email: <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a></p>
+            <p>Email: <a href="mailto:support@thefitlens.com" className="text-[var(--teal)] underline">support@thefitlens.com</a></p>
             <p className="mt-3">Website: thefitlens.com</p>
           </section>
 
           <section id="s16">
             <h2 className="text-2xl font-semibold mb-3">16. Data Collection and Use Summary Table</h2>
             <p>The following table summarizes the categories of personal data we collect, our purposes for collection, and the categories of third parties to whom such data may be disclosed. This table is provided to satisfy disclosure requirements under the CCPA, Washington MHMD Act, and other applicable state privacy laws.</p>
-            <div className="overflow-x-auto mt-4">
-              <table className="w-full text-sm border border-neutral-300 border-collapse">
+            <div className="overflow-x-auto mt-4" tabIndex={0} role="region" aria-label="Personal data categories table, scrolls sideways">
+              <table className="w-full text-sm border border-border border-collapse">
                 <thead>
-                  <tr className="bg-neutral-100">
-                    <th className="border border-neutral-300 px-3 py-2 text-left align-top">Category of Personal Data</th>
-                    <th className="border border-neutral-300 px-3 py-2 text-left align-top">Purposes for Collection</th>
-                    <th className="border border-neutral-300 px-3 py-2 text-left align-top">Third Parties Disclosed To / Sold or Shared</th>
+                  <tr className="bg-surface">
+                    <th className="border border-border px-3 py-2 text-left align-top">Category of Personal Data</th>
+                    <th className="border border-border px-3 py-2 text-left align-top">Purposes for Collection</th>
+                    <th className="border border-border px-3 py-2 text-left align-top">Third Parties Disclosed To / Sold or Shared</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border border-neutral-300 px-3 py-2 align-top font-medium">Registration &amp; Account Data (name, email, password, date of birth, sex, height, starting weight, goal weight)</td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top font-medium">Registration &amp; Account Data (name, email, password, date of birth, sex, height, starting weight, goal weight)</td>
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Provide the Services</li>
                         <li>Create and manage your account</li>
@@ -317,7 +317,7 @@ export default function PrivacyPolicy() {
                         <li>Customer support</li>
                       </ul>
                     </td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Disclosed To:</li>
                         <li>Technology/hosting providers (Supabase)</li>
@@ -328,8 +328,8 @@ export default function PrivacyPolicy() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border border-neutral-300 px-3 py-2 align-top font-medium">Body Composition &amp; Biometric Data (weight, body fat %, lean mass, muscle mass, BMI, segmental measurements, Composite Body Score, trend data)</td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top font-medium">Body Composition &amp; Biometric Data (weight, body fat %, lean mass, muscle mass, BMI, segmental measurements, Composite Body Score, trend data)</td>
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Provide core body composition tracking</li>
                         <li>Generate AI coaching and recommendations</li>
@@ -338,7 +338,7 @@ export default function PrivacyPolicy() {
                         <li>With your consent: share with healthcare providers</li>
                       </ul>
                     </td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Disclosed To:</li>
                         <li>Hosting/infrastructure providers</li>
@@ -349,8 +349,8 @@ export default function PrivacyPolicy() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border border-neutral-300 px-3 py-2 align-top font-medium">Health Connect &amp; Wearable Data (steps, active calories, HRV, SpO2, respiratory rate, blood pressure, VO2 max, body fat from wearable, lean body mass from wearable, sleep data)</td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top font-medium">Health Connect &amp; Wearable Data (steps, active calories, HRV, SpO2, respiratory rate, blood pressure, VO2 max, body fat from wearable, lean body mass from wearable, sleep data)</td>
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Provide activity and recovery tracking</li>
                         <li>Generate AI coaching recommendations</li>
@@ -358,7 +358,7 @@ export default function PrivacyPolicy() {
                         <li>Service improvement</li>
                       </ul>
                     </td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Disclosed To:</li>
                         <li>Hosting/infrastructure providers</li>
@@ -368,15 +368,15 @@ export default function PrivacyPolicy() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border border-neutral-300 px-3 py-2 align-top font-medium">Nutrition &amp; Food Log Data (meals logged, food items, macros, calorie targets, AI Chef interactions, meal plan data)</td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top font-medium">Nutrition &amp; Food Log Data (meals logged, food items, macros, calorie targets, AI Chef interactions, meal plan data)</td>
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Provide food logging and nutrition tracking</li>
                         <li>Generate AI nutrition coaching recommendations</li>
                         <li>Service improvement and analytics</li>
                       </ul>
                     </td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Disclosed To:</li>
                         <li>Hosting/infrastructure providers</li>
@@ -386,8 +386,8 @@ export default function PrivacyPolicy() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border border-neutral-300 px-3 py-2 align-top font-medium">GLP-1 Medication &amp; Side Effect Data (medication, dosage, self-reported side effects, severity, notes)</td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top font-medium">GLP-1 Medication &amp; Side Effect Data (medication, dosage, self-reported side effects, severity, notes)</td>
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Provide GLP-1 tracking features</li>
                         <li>Generate GLP-1 coaching content and side effect education</li>
@@ -395,7 +395,7 @@ export default function PrivacyPolicy() {
                         <li>Service improvement</li>
                       </ul>
                     </td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Disclosed To:</li>
                         <li>Hosting/infrastructure providers</li>
@@ -406,14 +406,14 @@ export default function PrivacyPolicy() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border border-neutral-300 px-3 py-2 align-top font-medium">Joint/Injury &amp; Physical Limitation Data (self-reported limitations provided during onboarding or profile setup)</td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top font-medium">Joint/Injury &amp; Physical Limitation Data (self-reported limitations provided during onboarding or profile setup)</td>
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Personalize AI coaching recommendations</li>
                         <li>Service improvement</li>
                       </ul>
                     </td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Disclosed To:</li>
                         <li>Hosting/infrastructure providers</li>
@@ -423,15 +423,15 @@ export default function PrivacyPolicy() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border border-neutral-300 px-3 py-2 align-top font-medium">Manual Workout Data (activity type, duration, optional effort or calorie estimates)</td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top font-medium">Manual Workout Data (activity type, duration, optional effort or calorie estimates)</td>
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Provide activity tracking</li>
                         <li>Generate AI coaching recommendations</li>
                         <li>Service improvement</li>
                       </ul>
                     </td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Disclosed To:</li>
                         <li>Hosting/infrastructure providers</li>
@@ -441,8 +441,8 @@ export default function PrivacyPolicy() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border border-neutral-300 px-3 py-2 align-top font-medium">Device &amp; Technical Data (device model, OS version, app version, device ID, IP address, crash diagnostics)</td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top font-medium">Device &amp; Technical Data (device model, OS version, app version, device ID, IP address, crash diagnostics)</td>
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Ensure technical functionality</li>
                         <li>Debug, troubleshoot, and prevent fraud</li>
@@ -450,7 +450,7 @@ export default function PrivacyPolicy() {
                         <li>Analytics</li>
                       </ul>
                     </td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Disclosed To:</li>
                         <li>Hosting/infrastructure providers</li>
@@ -461,15 +461,15 @@ export default function PrivacyPolicy() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border border-neutral-300 px-3 py-2 align-top font-medium">Usage &amp; Interaction Data (features accessed, screens visited, timestamps, in-app behavior, logging frequency)</td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top font-medium">Usage &amp; Interaction Data (features accessed, screens visited, timestamps, in-app behavior, logging frequency)</td>
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Understand how users interact with the Services</li>
                         <li>Improve features and user experience</li>
                         <li>Internal business analytics</li>
                       </ul>
                     </td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Disclosed To:</li>
                         <li>Hosting/infrastructure providers</li>
@@ -479,8 +479,8 @@ export default function PrivacyPolicy() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border border-neutral-300 px-3 py-2 align-top font-medium">Inferences (Composite Body Score, coach recommendations, health risk flags, progress projections)</td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top font-medium">Inferences (Composite Body Score, coach recommendations, health risk flags, progress projections)</td>
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Personalize coaching and recommendations</li>
                         <li>Generate clinical threshold alerts</li>
@@ -488,7 +488,7 @@ export default function PrivacyPolicy() {
                         <li>Service improvement</li>
                       </ul>
                     </td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Disclosed To:</li>
                         <li>Hosting/infrastructure providers</li>
@@ -499,15 +499,15 @@ export default function PrivacyPolicy() {
                     </td>
                   </tr>
                   <tr>
-                    <td className="border border-neutral-300 px-3 py-2 align-top font-medium">Payment Data (subscription status, transaction history; payment card details processed by third-party payment processor)</td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top font-medium">Payment Data (subscription status, transaction history; payment card details processed by third-party payment processor)</td>
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Process subscription payments</li>
                         <li>Manage billing and refunds</li>
                         <li>Fraud prevention</li>
                       </ul>
                     </td>
-                    <td className="border border-neutral-300 px-3 py-2 align-top">
+                    <td className="border border-border px-3 py-2 align-top">
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Disclosed To:</li>
                         <li>Payment processor (Google Play In-App Billing)</li>
@@ -567,11 +567,11 @@ export default function PrivacyPolicy() {
               <li>Delete your consumer health data</li>
               <li>Withdraw your consent to the collection or sharing of consumer health data</li>
             </ul>
-            <p className="mt-3">To exercise these rights, contact us at: <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a></p>
+            <p className="mt-3">To exercise these rights, contact us at: <a href="mailto:support@thefitlens.com" className="text-[var(--teal)] underline">support@thefitlens.com</a></p>
             <h3 className="text-lg font-semibold mt-4 mb-2">Consent</h3>
             <p>We obtain your affirmative, opt-in consent before collecting consumer health data beyond what is strictly necessary to provide the Services you request. Consent for collection and consent for sharing are obtained separately. Consent may not be bundled with acceptance of our Terms of Service or this Privacy Policy.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">How to Appeal</h3>
-            <p>You may appeal our decision with respect to a request by contacting us at: <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a>.</p>
+            <p>You may appeal our decision with respect to a request by contacting us at: <a href="mailto:support@thefitlens.com" className="text-[var(--teal)] underline">support@thefitlens.com</a>.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">Changes to This Notice</h3>
             <p>We will notify you of significant changes to this Notice. Please check this Notice periodically for updates.</p>
           </section>
@@ -594,19 +594,19 @@ export default function PrivacyPolicy() {
             <p>We share consumer health data only with service providers operating under Data Processing Agreements, healthcare providers upon your explicit request, and government agencies as required by law. We do not sell consumer health data.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">Your Nevada Consumer Health Data Rights</h3>
             <p>Nevada residents have the right to: (1) confirm whether we have collected your consumer health data; (2) confirm whether we have disclosed or sold your consumer health data; (3) delete your consumer health data; and (4) withdraw your consent.</p>
-            <p className="mt-3">Contact us at: <a href="mailto:support@thefitlens.com" className="text-cyan-700 underline">support@thefitlens.com</a></p>
+            <p className="mt-3">Contact us at: <a href="mailto:support@thefitlens.com" className="text-[var(--teal)] underline">support@thefitlens.com</a></p>
           </section>
 
         </div>
 
-        <footer className="mt-12 pt-8 border-t border-neutral-200">
-          <p className="text-sm text-neutral-500">The Fit Lens LLC • Arizona Domestic Limited Liability Company • ACC Business ID: 25083180</p>
-          <p className="text-sm text-neutral-500 mt-4 flex flex-wrap gap-x-6 gap-y-2">
-            <Link href="/" className="hover:text-neutral-900 transition-colors">Home</Link>
-            <Link href="/terms" className="hover:text-neutral-900 transition-colors">Terms of Service</Link>
-            <Link href="/about" className="hover:text-neutral-900 transition-colors">About</Link>
-            <Link href="/feedback" className="hover:text-neutral-900 transition-colors">Beta Feedback</Link>
-            <Link href="/beta" className="hover:text-neutral-900 transition-colors">Request beta access</Link>
+        <footer className="mt-12 pt-8 border-t border-border">
+          <p className="text-sm text-muted">The Fit Lens LLC • Arizona Domestic Limited Liability Company • ACC Business ID: 25083180</p>
+          <p className="text-sm text-muted mt-4 flex flex-wrap gap-x-6 gap-y-2">
+            <Link href="/" className="inline-flex min-h-11 items-center hover:text-foreground transition-colors">Home</Link>
+            <Link href="/terms" className="inline-flex min-h-11 items-center hover:text-foreground transition-colors">Terms of Service</Link>
+            <Link href="/about" className="inline-flex min-h-11 items-center hover:text-foreground transition-colors">About</Link>
+            <Link href="/feedback" className="inline-flex min-h-11 items-center hover:text-foreground transition-colors">Beta Feedback</Link>
+            <Link href="/beta" className="inline-flex min-h-11 items-center hover:text-foreground transition-colors">Request beta access</Link>
           </p>
         </footer>
       </article>

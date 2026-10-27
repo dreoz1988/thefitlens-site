@@ -159,8 +159,8 @@ export function BetaForm() {
             <label key={value} className="cursor-pointer">
               <input type="radio" name="glp1_status" value={value} className="peer sr-only" />
               <span
-                className="inline-block rounded-full border border-border px-4 py-2 text-sm text-muted
-                           transition-colors peer-checked:border-transparent peer-checked:text-foreground
+                className="inline-flex min-h-11 items-center rounded-full border border-border px-4 text-sm text-muted
+                           transition-colors peer-checked:border-transparent peer-checked:text-background
                            peer-checked:bg-[var(--azure)] peer-focus-visible:outline peer-focus-visible:outline-2
                            peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[var(--azure)]"
               >

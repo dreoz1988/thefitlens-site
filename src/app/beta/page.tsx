@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { BetaForm } from "./beta-form";
 
 export const metadata: Metadata = {
-  title: "Request Beta Access — The Fit Lens",
+  title: "Request beta access | The Fit Lens",
   description:
     "The Fit Lens tracks fat, muscle, and visceral fat, not just weight. Android-first. Beta testing requires a Bluetooth body scale and body tape. Request beta access.",
 };
@@ -73,7 +73,7 @@ const DIFFERENTIATORS = [
     n: "02",
     accent: "var(--azure)",
     title: "Off-the-shelf hardware",
-    body: "Renpho and Etekcity Bluetooth devices, not anything proprietary or sold by us. Beta testing needs one of each; more brands are being added.",
+    body: "Renpho and Etekcity Bluetooth devices, not anything proprietary or sold by us. The beta currently asks for one of each.",
   },
   {
     n: "03",
@@ -93,28 +93,16 @@ const HARDWARE = [
   {
     accent: "var(--coral)",
     name: "Renpho Bluetooth body tape",
-    detail: "Circumference: waist, hips, arms.",
+    detail: "Circumference at up to 14 sites, including waist, hips, chest, arms and thighs.",
     href: "https://renpho.com/pages/renpho-smart-body-tape-measure-2",
   },
 ];
 
 export default function BetaPage() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <div className="max-w-5xl mx-auto px-6">
-        <header className="py-8 flex items-center justify-between">
-          <Link href="/" className="text-sm font-semibold tracking-tight hover:text-muted transition-colors">
-            The Fit Lens
-          </Link>
-          <nav className="text-sm text-muted flex gap-6">
-            <Link href="/about" className="hover:text-foreground transition-colors">
-              About
-            </Link>
-            <a href="#request" className="hover:text-foreground transition-colors">
-              Request access
-            </a>
-          </nav>
-        </header>
+    <main id="main" tabIndex={-1} className="min-h-screen bg-background text-foreground focus:outline-none">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <SiteHeader />
 
         {/* Hero */}
         <section className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center pt-12 pb-24 md:pt-20 md:pb-32">
@@ -126,8 +114,7 @@ export default function BetaPage() {
               Private beta
             </p>
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight mb-6">
-              <span className="block">Lose fat.</span>
-              <span className="block">Keep muscle.</span>
+              <span className="block">Fat or muscle?</span>
               <span className="block">Know the difference.</span>
             </h1>
             <p className="text-muted text-lg leading-relaxed mb-4 max-w-prose">
@@ -136,8 +123,8 @@ export default function BetaPage() {
               cut, a recomp, or a GLP-1 protocol is judged on what actually changed.
             </p>
             <p className="text-subtle mb-10 max-w-prose">
-              Built for Android. Beta testing requires a Bluetooth body scale
-              and body tape, most people already own something close.{" "}
+              Built for Android. The beta currently asks for a Bluetooth body
+              composition scale and a smart tape.{" "}
               <a href="#hardware" className="underline underline-offset-4 hover:text-muted transition-colors">
                 Details below.
               </a>
@@ -181,13 +168,12 @@ export default function BetaPage() {
               Hardware required
             </p>
             <h2 className="text-xl md:text-2xl font-medium tracking-tight mb-3">
-              Two Bluetooth devices, both required
+              Two Bluetooth devices for the beta
             </h2>
             <p className="text-muted mb-8 max-w-prose">
-              Body composition doesn&apos;t come from a phone. It comes from these
-              two devices over Bluetooth. Without both, most of what the app
-              does, fat, muscle, and visceral fat tracking, has nothing to
-              read.
+              Body composition comes from the scale over Bluetooth. The smart
+              tape adds circumference measurements. The private beta currently
+              asks for both.
             </p>
             <ul className="space-y-5 mb-8">
               {HARDWARE.map((h) => (
@@ -233,17 +219,7 @@ export default function BetaPage() {
           </div>
         </section>
 
-        <footer className="border-t border-border py-10 text-xs text-subtle flex flex-wrap gap-x-6 gap-y-2 items-center">
-          <Link href="/" className="hover:text-muted transition-colors">Home</Link>
-          <Link href="/about" className="hover:text-muted transition-colors">About</Link>
-          <Link href="/feedback" className="hover:text-muted transition-colors">Beta Feedback</Link>
-          <a href="/privacy" className="hover:text-muted transition-colors">Privacy Policy</a>
-          <a href="/terms" className="hover:text-muted transition-colors">Terms of Service</a>
-          <a href="mailto:support@thefitlens.com" className="hover:text-muted transition-colors">
-            support@thefitlens.com
-          </a>
-          <p className="w-full mt-2">© {new Date().getFullYear()} The Fit Lens LLC</p>
-        </footer>
+        <SiteFooter />
       </div>
     </main>
   );

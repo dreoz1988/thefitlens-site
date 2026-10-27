@@ -9,7 +9,9 @@
   --surface: oklch(21% 0.013 227);
   --foreground: oklch(96% 0.004 227);
   --muted: oklch(72% 0.018 227);
-  --subtle: oklch(48% 0.02 227);
+  /* Raised from 48% on 2026-10-27: 48% measured 2.98:1 on --background.
+     66% clears 4.5:1 on both --background and --surface. */
+  --subtle: oklch(66% 0.018 227);
   --border: oklch(31% 0.018 227);
 
   /* Interactive: solid inversion, no gradient, no gimmick. */

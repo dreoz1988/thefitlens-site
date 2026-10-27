@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ResetPasswordPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main id="main" tabIndex={-1} className="min-h-screen bg-black text-white focus:outline-none">
       <div className="max-w-5xl mx-auto px-6">
         <header className="py-8">
           <a href="/" className="text-sm font-semibold tracking-tight hover:text-neutral-300">
@@ -31,7 +31,7 @@ export default function ResetPasswordPage() {
           </div>
         </section>
 
-        <footer className="border-t border-neutral-800 py-10 text-xs text-neutral-600">
+        <footer className="border-t border-neutral-800 py-10 text-xs text-neutral-400">
           <a href="/privacy" className="hover:text-neutral-400 mr-6">Privacy Policy</a>
           <a href="/terms" className="hover:text-neutral-400">Terms of Service</a>
           <p className="mt-4">© {new Date().getFullYear()} The Lens Company</p>

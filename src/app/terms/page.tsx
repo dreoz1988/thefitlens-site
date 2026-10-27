@@ -1,15 +1,15 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Terms of Service — The Fit Lens",
+  title: "Terms of Service | The Fit Lens",
   description: "Terms of service for The Fit Lens mobile application.",
 };
 
 export default function Terms() {
   return (
-    <main className="min-h-screen bg-white text-neutral-900">
+    <main id="main" tabIndex={-1} className="min-h-screen bg-white text-neutral-900 focus:outline-none">
       <div className="max-w-3xl mx-auto px-6 pt-8">
-        <Link href="/" className="text-sm font-semibold tracking-tight text-neutral-900 hover:text-neutral-600 transition-colors">
+        <Link href="/" className="inline-flex min-h-11 items-center text-sm font-semibold tracking-tight text-neutral-900 hover:text-neutral-600 transition-colors">
           The Fit Lens
         </Link>
       </div>

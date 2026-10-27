@@ -1,32 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 
 export const metadata: Metadata = {
-  title: "About — The Fit Lens",
+  title: "About | The Fit Lens",
   description:
     "The Fit Lens is built by The Fit Lens LLC, an Arizona company, for people who track body composition, not just scale weight.",
 };
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <div className="max-w-5xl mx-auto px-6">
-        <header className="py-8 flex items-center justify-between">
-          <Link href="/" className="text-sm font-semibold tracking-tight hover:text-muted transition-colors">
-            The Fit Lens
-          </Link>
-          <nav className="text-sm text-muted flex gap-6">
-            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
-            <Link href="/beta#request" className="hover:text-foreground transition-colors">Request access</Link>
-          </nav>
-        </header>
+    <main id="main" tabIndex={-1} className="min-h-screen bg-background text-foreground focus:outline-none">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <SiteHeader current="about" />
 
         <section className="py-16 md:py-24 max-w-2xl">
           <p className="text-sm uppercase tracking-widest mb-6" style={{ color: "var(--teal)" }}>
             About
           </p>
           <h1 className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight mb-6">
-            A clinical instrument, not a motivator.
+            A precise instrument, not a motivator.
           </h1>
           <p className="text-muted text-lg leading-relaxed mb-6 max-w-prose">
             Most tracking apps either bury you in tables or talk to you like a
@@ -74,16 +67,7 @@ export default function About() {
           </div>
         </section>
 
-        <footer className="border-t border-border py-10 text-xs text-subtle flex flex-wrap gap-x-6 gap-y-2 items-center">
-          <Link href="/" className="hover:text-muted transition-colors">Home</Link>
-          <Link href="/feedback" className="hover:text-muted transition-colors">Beta Feedback</Link>
-          <Link href="/privacy" className="hover:text-muted transition-colors">Privacy Policy</Link>
-          <Link href="/terms" className="hover:text-muted transition-colors">Terms of Service</Link>
-          <a href="mailto:support@thefitlens.com" className="hover:text-muted transition-colors">
-            support@thefitlens.com
-          </a>
-          <p className="w-full mt-2">© {new Date().getFullYear()} The Fit Lens LLC</p>
-        </footer>
+        <SiteFooter />
       </div>
     </main>
   );
