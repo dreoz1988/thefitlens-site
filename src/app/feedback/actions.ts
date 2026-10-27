@@ -1,6 +1,7 @@
 "use server";
 
 import { after } from "next/server";
+import { clientIp, RATE_LIMITED_MESSAGE } from "@/lib/form-request";
 
 export type FeedbackState = {
   status: "idle" | "success" | "error";
@@ -101,6 +102,7 @@ export async function submitFeedback(
 
   const deviceModelValue = deviceModel.slice(0, 120) || null;
 
+  const ip = await clientIp();
   const res = await fetch(`${url}/rest/v1/feedback_reports`, {
     method: "POST",
     headers: {
@@ -108,6 +110,7 @@ export async function submitFeedback(
       Authorization: `Bearer ${anonKey}`,
       "Content-Type": "application/json",
       Prefer: "return=minimal",
+      ...(ip ? { "x-client-ip": ip } : {}),
     },
     body: JSON.stringify({
       category,
@@ -129,6 +132,10 @@ export async function submitFeedback(
       })
     );
     return { status: "success" };
+  }
+
+  if (res?.status === 429) {
+    return { status: "error", message: RATE_LIMITED_MESSAGE };
   }
 
   console.error("feedback_reports insert failed:", res?.status, await res?.text().catch(() => ""));

@@ -1,6 +1,8 @@
 "use server";
 
 import { after } from "next/server";
+import { clientIp, RATE_LIMITED_MESSAGE } from "@/lib/form-request";
+import { buildSignupAlert } from "@/lib/signup-alert";
 
 export type SignupState = {
   status: "idle" | "success" | "error";
@@ -16,7 +18,6 @@ const ALERT_FROM = "FitLens Alerts <alerts@mail.thefitlens.com>";
 async function sendSignupAlert(signup: {
   email: string;
   device_model: string | null;
-  glp1_status: string | null;
   has_required_hardware: boolean;
 }) {
   const apiKey = process.env.RESEND_API_KEY;
@@ -34,15 +35,7 @@ async function sendSignupAlert(signup: {
       body: JSON.stringify({
         from: ALERT_FROM,
         to: [ALERT_TO],
-        subject: `New beta signup: ${signup.email}`,
-        text: [
-          `Email: ${signup.email}`,
-          `Android: yes`,
-          `Has hardware: ${signup.has_required_hardware ? "yes" : "no"}`,
-          `Device: ${signup.device_model ?? "not provided"}`,
-          `GLP-1: ${signup.glp1_status ?? "not provided"}`,
-          `Signed up: ${new Date().toISOString()}`,
-        ].join("\n"),
+        ...buildSignupAlert({ ...signup, signedUpAt: new Date() }),
       }),
     });
     if (!res.ok) {
@@ -95,6 +88,7 @@ export async function requestBetaAccess(
     };
   }
 
+  const ip = await clientIp();
   const res = await fetch(`${url}/rest/v1/beta_signups`, {
     method: "POST",
     headers: {
@@ -102,6 +96,7 @@ export async function requestBetaAccess(
       Authorization: `Bearer ${anonKey}`,
       "Content-Type": "application/json",
       Prefer: "return=minimal",
+      ...(ip ? { "x-client-ip": ip } : {}),
     },
     body: JSON.stringify({
       email,
@@ -117,17 +112,19 @@ export async function requestBetaAccess(
     if (res.ok) {
       // New row only (not a duplicate). Runs after the response is sent,
       // so a slow or failed send can never affect the visitor.
-      const glp1Status = GLP1_VALUES.has(glp1Raw) ? glp1Raw : null;
       after(() =>
         sendSignupAlert({
           email,
           device_model: deviceModel.slice(0, 120) || null,
-          glp1_status: glp1Status,
           has_required_hardware: hasRequiredHardware,
         })
       );
     }
     return { status: "success" };
+  }
+
+  if (res?.status === 429) {
+    return { status: "error", message: RATE_LIMITED_MESSAGE };
   }
 
   console.error("beta_signups insert failed:", res?.status, await res?.text().catch(() => ""));
