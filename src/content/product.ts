@@ -186,7 +186,12 @@ export const features: (Feature & { section: HomeSection })[] = [
     heading: "Your trend, your goal, one priority",
     body:
       "The home screen shows your weight trend, how far you are from your goal, and a single priority for today.",
-    // Image moved to the hero (2026-10-28), so this section is text only.
+    image: {
+      src: "/images/weight-trend.png",
+      width: 1672,
+      height: 941,
+      alt: `A phone showing The Fit Lens home screen with a weight trend, a goal gauge and today's focus, next to two people looking at a phone. The demo name was removed from the greeting. ${SAMPLE}`,
+    },
   },
   {
     id: "body-avatar",
@@ -216,19 +221,16 @@ export const features: (Feature & { section: HomeSection })[] = [
     id: "product-check",
     section: "what",
     status: "available",
-    source: "src/components/ProductCheckModal.tsx, src/lib/productHealth.ts",
+    source: "src/components/ProductCheckModal.tsx:154-155 (score out of 100), src/lib/productHealth.ts",
     heading: "Check a product before you buy it",
     body:
-      "Scan a packaged food to see what's good and what to watch: whether it's high or low in sugar, salt and fat, how processed it is, and its additives, from Open Food Facts data.",
-  },
-  {
-    id: "product-score",
-    section: "what",
-    status: "planned",
-    heading: "Product score",
-    body: "",
-    pendingNote:
-      "Marked planned on Andre's instruction (2026-10-28) to keep it off the site. Release 12 already shows a score out of 100 in Check a Product (ProductCheckModal).",
+      "Scan a packaged food to get a score out of 100 and see what's good and what to watch: whether it's high or low in sugar, salt and fat, how processed it is, and its additives, from Open Food Facts data.",
+    image: {
+      src: "/images/product-check.png",
+      width: 1672,
+      height: 941,
+      alt: `A phone showing a product check for a sample oat cereal with an illustrative score of 58 out of 100, next to two people scanning a cereal box in a grocery aisle. ${SAMPLE}`,
+    },
   },
   {
     id: "body-score",
@@ -288,15 +290,28 @@ export const features: (Feature & { section: HomeSection })[] = [
     heading: "Scale and tape in one place",
     body:
       "Weight, body fat and muscle mass come from your Bluetooth scale. The Renpho smart tape adds circumference at up to 14 sites, from neck to calves.",
+    image: {
+      src: "/images/measurements.png",
+      width: 1672,
+      height: 941,
+      alt: `A phone showing scale readings and tape measurements, next to a person measuring their waist with a smart tape and a smart scale on the floor. ${SAMPLE}`,
+    },
   },
   {
     id: "health-connect-records",
     section: "connected",
-    status: "unverified",
+    // Approved by Andre with its image (health-connect.png), 2026-10-28.
+    status: "available",
+    source: "src/services/healthConnect.ts:18 (5 required) and :26 (13 optional record types)",
     heading: "Activity from Health Connect",
-    body: "",
-    pendingNote:
-      "Held for Andre's confirmation, with its image (health-connect-activity.png). App source reads 5 required and 13 optional record types (healthConnect.ts).",
+    body:
+      "Steps, sleep, heart rate, distance and more are read from Health Connect with your permission, from whichever watch or app writes there. What you see depends on what your device records.",
+    image: {
+      src: "/images/health-connect.png",
+      width: 1672,
+      height: 941,
+      alt: `A phone showing today's steps, heart rate, sleep, distance and active energy from Health Connect, next to two people checking a phone and a watch. ${SAMPLE}`,
+    },
   },
   {
     id: "intensity-zones",
