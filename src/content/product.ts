@@ -148,17 +148,21 @@ export const platforms = [
   },
 ];
 
-// ── Homepage hero image (changed by Andre 2026-10-28) ───────────────────────
-// Confirmed features: weight trend, goal and today's priority (ResultsHeroCard,
-// ScoreGauge ProgressArc, TodaysPriorityCard). The "Andre" greeting and initial
-// were painted out of this copy of the image. scale-and-tape.png is no longer
-// used on any page.
+// ── Homepage hero image (concept B, 2026-10-28) ─────────────────────────────
+// Built from Andre's "The fit lens fitness app hero.png" (phone + people only;
+// the baked-in headline, buttons and "CONCEPT B" label are cropped out, the
+// page renders that text as HTML). The generated phone screen was replaced with
+// a REAL app capture: the home screen of the staging demo account (persona
+// "Alex", sample data) from "Fit Lens - Play Store Screenshots/02 Home.png",
+// captured August 2026. It shows the weight trend, % to goal, pace and today's
+// priority (ResultsHeroCard, ScoreGauge ProgressArc, TodaysPriorityCard).
+// progress-goal.png and scale-and-tape.png are no longer used on any page.
 
 export const heroImage: ProductImage = {
-  src: "/images/progress-goal.png",
-  width: 1672,
-  height: 941,
-  alt: `A phone showing The Fit Lens home screen with a weight trend, distance to goal, and today's focus. ${SAMPLE}`,
+  src: "/images/hero-real-screen.png",
+  width: 1270,
+  height: 483,
+  alt: `Two people looking at a phone, next to a phone showing The Fit Lens home screen: a 171.5 lb weight trend, 50% of the way to a 164 lb goal, and today's priority. Real app screen with sample data from a demo account.`,
 };
 
 // ── Homepage features ───────────────────────────────────────────────────────

@@ -93,17 +93,17 @@ export default function Home() {
         <SiteHeader current="home" />
 
         {/* 1. Hero */}
-        <section aria-labelledby="hero-heading" className="pt-12 pb-12 md:pt-20 md:pb-16 max-w-3xl">
-          <p className="text-sm uppercase tracking-widest mb-6 text-[var(--teal)]">Private beta</p>
-          <h1 id="hero-heading" className="text-4xl md:text-6xl font-semibold tracking-tight leading-tight mb-6">
+        {/* Layout follows hero concept B (2026-10-28): centered text over the image. */}
+        <section aria-labelledby="hero-heading" className="pt-12 pb-10 md:pt-16 md:pb-12 max-w-4xl mx-auto text-center">
+          <h1 id="hero-heading" className="text-4xl md:text-7xl font-semibold tracking-tight leading-tight mb-6">
             Your body is the scoreboard.
           </h1>
-          <p className="text-muted text-lg leading-relaxed mb-4 max-w-prose">
+          <p className="text-muted text-lg md:text-xl leading-relaxed mb-4 max-w-3xl mx-auto">
             See your weight trend and how far you are from your goal. Log food by barcode, by weight or by
             search, and check packaged foods before you buy.
           </p>
-          <p className="text-subtle mb-10 max-w-prose">Android only. Requires a supported Bluetooth body composition scale.</p>
-          <div className="flex flex-wrap gap-x-6 gap-y-3 items-center">
+          <p className="text-subtle mb-10">Android only. Requires a supported Bluetooth body composition scale.</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-3 items-center justify-center">
             <Link href="/beta#request" className={ctaClass}>
               Request beta access
             </Link>
