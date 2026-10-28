@@ -122,6 +122,24 @@ export default function Home() {
           <FeatureRows section="what" />
         </section>
 
+        {/* 2b. Track more than weight (its own section, added 2026-10-28) */}
+        {features
+          .filter((f) => f.section === "beyond-weight" && f.status === "available" && f.image)
+          .map((f) => (
+            <section
+              key={f.id}
+              id="more-than-weight"
+              aria-labelledby="beyond-weight-heading"
+              className="scroll-mt-12 border-t border-border pt-12 mt-8 pb-4"
+            >
+              <h2 id="beyond-weight-heading" className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
+                {f.heading}
+              </h2>
+              <p className="text-muted leading-relaxed max-w-prose mb-8">{f.body}</p>
+              <ProductFigure image={f.image!} />
+            </section>
+          ))}
+
         {/* 3. Connected data */}
         <section id="connected" aria-labelledby="connected-heading" className="scroll-mt-12 border-t border-border pt-12 mt-8">
           <h2 id="connected-heading" className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">Connected data</h2>

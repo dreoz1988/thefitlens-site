@@ -175,7 +175,7 @@ export const heroImage: ProductImage = {
 // for the product score to be marked "planned". The notes record what the app
 // source shows for each, so the decision can be revisited.
 
-export type HomeSection = "what" | "connected";
+export type HomeSection = "what" | "beyond-weight" | "connected";
 
 export const features: (Feature & { section: HomeSection })[] = [
   {
@@ -273,6 +273,50 @@ export const features: (Feature & { section: HomeSection })[] = [
       alt: `A tablet showing a sample Fit Lens health summary with body composition, nutrition and activity charts. ${SAMPLE}`,
     },
   },
+  // Added 2026-10-28 on Andre's instruction; he asked that the image claims not be verified.
+  {
+    id: "health-report-pdf",
+    section: "what",
+    status: "available",
+    source: "patient-summary-pdf function",
+    heading: "Your progress, ready to share",
+    body:
+      "Export your trends as a PDF for a doctor's visit or your own records. A personal tracking summary, not a clinical document.",
+    image: {
+      src: "/images/health-report-pdf.png",
+      width: 1672,
+      height: 941,
+      alt: `A tablet showing a sample progress summary with body composition, nutrition and activity charts, next to two people reading a printed copy. ${SAMPLE}`,
+    },
+  },
+  {
+    id: "training",
+    section: "what",
+    status: "available",
+    source: "TrainingHomeScreen, ZoneStackChart (added on Andre's instruction 2026-10-28)",
+    heading: "Your training, in one clear view",
+    body: "Review your sessions, explore intensity zones, and track your training week.",
+    image: {
+      src: "/images/training.png",
+      width: 1672,
+      height: 941,
+      alt: `A phone showing a training week with sessions, minutes per day and time in each intensity zone, next to two people lifting dumbbells. ${SAMPLE}`,
+    },
+  },
+  {
+    id: "track-more-than-weight",
+    section: "beyond-weight",
+    status: "available",
+    source: "useGlp1Coach.ts, GlpOneDashboardSection (added on Andre's instruction 2026-10-28)",
+    heading: "Track more than weight",
+    body: "Keep body measurements, nutrition and hydration in view.",
+    image: {
+      src: "/images/glp1-tracking.png",
+      width: 1672,
+      height: 941,
+      alt: `A phone showing GLP-1 tracking with protein and hydration against example goals, lean and fat mass change, and weight and lean mass trends, next to two people smiling. ${SAMPLE}`,
+    },
+  },
   {
     id: "glp1",
     section: "what",
@@ -300,10 +344,10 @@ export const features: (Feature & { section: HomeSection })[] = [
     body:
       "Weight, body fat and muscle mass come from your Bluetooth scale. The Renpho smart tape adds circumference at up to 14 sites, from neck to calves.",
     image: {
-      src: "/images/measurements.png",
+      src: "/images/body-composition.png",
       width: 1672,
       height: 941,
-      alt: `A phone showing scale readings and tape measurements, next to a person measuring their waist with a smart tape and a smart scale on the floor. ${SAMPLE}`,
+      alt: `A phone showing a body composition screen with a 3D body model, muscle mass and body fat, next to two people looking at a phone. ${SAMPLE}`,
     },
   },
   {
