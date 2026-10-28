@@ -46,7 +46,7 @@ export function SiteFooter() {
   );
 }
 
-/** Product image with the sample-data label every product image carries. */
+/** Framed product image. */
 export function ProductFigure({
   image,
   narrow = false,
@@ -70,11 +70,7 @@ export function ProductFigure({
           sizes={narrow ? "240px" : "(max-width: 1024px) 100vw, 1024px"}
           className="block h-auto w-full"
         />
-        <span className="absolute left-2 top-2 rounded-md bg-background/90 px-2 py-1 text-xs font-medium text-foreground">
-          Sample data
-        </span>
       </div>
-      <figcaption className="mt-2 text-sm text-subtle">Illustrative interface. Sample data, not a real user.</figcaption>
     </figure>
   );
 }

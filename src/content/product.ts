@@ -41,7 +41,6 @@ export interface Feature {
   image?: ProductImage;
 }
 
-const SAMPLE = "Illustrative interface with sample data.";
 
 // ── Hardware ────────────────────────────────────────────────────────────────
 
@@ -176,7 +175,7 @@ export const features: (Feature & { section: HomeSection })[] = [
       src: "/images/concept-b-hero.png",
       width: 1672,
       height: 941,
-      alt: "A phone showing a weight trend with a goal, next to two people looking at a phone. Sample data.",
+      alt: "A phone showing a weight trend with a goal, next to two people looking at a phone.",
     },
   },
   {
@@ -200,7 +199,7 @@ export const features: (Feature & { section: HomeSection })[] = [
       src: "/images/product-check.png",
       width: 1672,
       height: 941,
-      alt: `A phone showing a product check for a sample oat cereal with an illustrative score of 58 out of 100, next to two people scanning a cereal box in a grocery aisle. ${SAMPLE}`,
+      alt: `A phone showing a product check for a sample oat cereal with an illustrative score of 58 out of 100, next to two people scanning a cereal box in a grocery aisle.`,
     },
   },
   {
@@ -242,7 +241,7 @@ export const features: (Feature & { section: HomeSection })[] = [
       src: "/images/health-report-pdf.png",
       width: 1672,
       height: 941,
-      alt: `A tablet showing a sample progress summary with body composition, nutrition and activity charts, next to two people reading a printed copy. ${SAMPLE}`,
+      alt: `A tablet showing a sample progress summary with body composition, nutrition and activity charts, next to two people reading a printed copy.`,
     },
   },
   {
@@ -256,7 +255,7 @@ export const features: (Feature & { section: HomeSection })[] = [
       src: "/images/training.png",
       width: 1672,
       height: 941,
-      alt: `A phone showing a training week with sessions, minutes per day and time in each intensity zone, next to two people lifting dumbbells. ${SAMPLE}`,
+      alt: `A phone showing a training week with sessions, minutes per day and time in each intensity zone, next to two people lifting dumbbells.`,
     },
   },
   {
@@ -270,7 +269,7 @@ export const features: (Feature & { section: HomeSection })[] = [
       src: "/images/glp1-tracking.png",
       width: 1672,
       height: 941,
-      alt: `A dashboard showing GLP-1 tracking with protein and hydration against example goals, lean and fat mass change, and weight and lean mass history, next to two people standing together. ${SAMPLE}`,
+      alt: `A dashboard showing GLP-1 tracking with protein and hydration against example goals, lean and fat mass change, and weight and lean mass history, next to two people standing together.`,
     },
   },
   {
@@ -285,7 +284,7 @@ export const features: (Feature & { section: HomeSection })[] = [
       src: "/images/body-composition.png",
       width: 1672,
       height: 941,
-      alt: `A phone showing a body composition screen with a 3D body model, muscle mass and body fat, next to two people looking at a phone. ${SAMPLE}`,
+      alt: `A phone showing a body composition screen with a 3D body model, muscle mass and body fat, next to two people looking at a phone.`,
     },
   },
   {
@@ -301,7 +300,7 @@ export const features: (Feature & { section: HomeSection })[] = [
       src: "/images/health-connect.png",
       width: 1672,
       height: 941,
-      alt: `A phone showing today's steps, heart rate, sleep, distance and active energy from Health Connect, next to two people checking a phone and a watch. ${SAMPLE}`,
+      alt: `A phone showing today's steps, heart rate, sleep, distance and active energy from Health Connect, next to two people checking a phone and a watch.`,
     },
   },
 ];
