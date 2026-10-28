@@ -194,21 +194,6 @@ export const features: (Feature & { section: HomeSection })[] = [
     },
   },
   {
-    id: "body-avatar",
-    section: "what",
-    status: "available",
-    source: "src/components/BodyAvatarView.tsx",
-    heading: "A 3D body built from your readings",
-    body:
-      "The model's shape follows your scale readings, including body fat percentage and muscle mass, and updates with each weigh-in.",
-    image: {
-      src: "/screenshots/body-avatar.png",
-      width: 390,
-      height: 1258,
-      alt: `The Fit Lens 3D wireframe body model with callout markers. ${SAMPLE}`,
-    },
-  },
-  {
     id: "food-logging",
     section: "what",
     status: "available",
