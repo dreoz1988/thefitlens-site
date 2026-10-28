@@ -84,6 +84,7 @@ export const devices: Device[] = [
     status: "beta",
     source: "src/ble/scales/renpho-rmsc04.ts, reachable only in development builds",
     measures: "Weight and body composition",
+    note: "Not in the beta release. Shown under Not yet supported.",
   },
   {
     id: "renpho-ry002",
@@ -103,15 +104,6 @@ export const devices: Device[] = [
     status: "available",
     source: "src/services/FoodScaleService.ts",
     measures: "Food weight for logging",
-  },
-  {
-    id: "other-scale-brands",
-    kind: "Body composition scale",
-    brand: "Other brands",
-    model: "",
-    status: "unverified",
-    measures: "",
-    note: "No other brand has protocol code in the app. Confirm which brands are planned before naming any.",
   },
 ];
 

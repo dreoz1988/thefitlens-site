@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Added, DraftBanner, Removed } from "@/components/policy-draft";
 
 export const metadata = {
   title: "Privacy Policy | The Fit Lens",
@@ -17,9 +18,11 @@ export default function PrivacyPolicy() {
         <header className="mb-12 border-b border-border pb-8">
           <p className="text-sm uppercase tracking-widest mb-2 text-[var(--teal)]">The Fit Lens</p>
           <h1 className="text-4xl font-semibold tracking-tight mb-4">Privacy Policy</h1>
-          <p className="text-sm text-muted">Effective date: June 28, 2026</p>
+          <p className="text-sm text-muted">Effective date: June 28, 2026 <Added confirm="set the new effective date when this draft is published">(draft revision, not yet effective)</Added></p>
           <p className="text-sm text-muted mt-1">Operated by: The Fit Lens LLC &bull; <a href="mailto:support@thefitlens.com" className="text-[var(--teal)] underline">support@thefitlens.com</a></p>
         </header>
+
+        <DraftBanner />
 
         <div className="space-y-8 leading-relaxed">
 
@@ -45,18 +48,19 @@ export default function PrivacyPolicy() {
               <li>Date of birth, biological sex, height, and starting/goal weight</li>
               <li>Food logs, meal entries, and nutritional information</li>
               <li>Manual body composition entries (weight, body fat percentage, etc.)</li>
-              <li>Manual workout entries (activity type, duration, and optional effort or calorie estimates)</li>
+              <li><Removed reason="the app has no manual workout logging; workouts come only from Health Connect">Manual workout entries (activity type, duration, and optional effort or calorie estimates)</Removed></li>
               <li>GLP-1 medication and dosage information (if you use the GLP-1 tracking features)</li>
               <li>Self-reported GLP-1 side effect logs (symptom type, severity, date, and optional notes)</li>
               <li>Joint, injury, or physical limitation information you provide during onboarding or in your profile</li>
               <li>Feedback, survey responses, or support communications</li>
             </ul>
             <h3 className="text-lg font-semibold mt-4 mb-2">2B. Data from Bluetooth-Connected Smart Scales and Devices</h3>
-            <p>The Services support integration with Bluetooth Low Energy (BLE) smart scales and compatible hardware, including but not limited to Renpho, Etekcity, and Welland devices. When you connect such a device, we receive body composition measurements transmitted by that device, which may include:</p>
+            <p>The Services support integration with Bluetooth Low Energy (BLE) smart scales and compatible hardware, including <Added>Renpho and Etekcity devices</Added> <Removed reason="the app has no Welland support">including but not limited to Renpho, Etekcity, and Welland devices</Removed>. When you connect such a device, we receive body composition measurements transmitted by that device, which may include:</p>
             <ul className="list-disc pl-6 space-y-2 mt-3">
               <li>Weight</li>
               <li>Body fat percentage, lean body mass, muscle mass, bone mass, and water percentage</li>
-              <li>Segmental body composition measurements (where supported by the connected device)</li>
+              <li><Removed reason="the released app does not read segmental data; only a development build supports an 8-electrode scale">Segmental body composition measurements (where supported by the connected device)</Removed></li>
+              <li><Added>Body circumference measurements from a Bluetooth smart tape, such as waist, hips, chest, arms and thighs</Added></li>
             </ul>
             <p className="mt-3">We receive this data directly from your device over Bluetooth. We do not control the device manufacturer&rsquo;s own data collection practices. Please review the privacy policy of your scale or device manufacturer separately.</p>
             <h3 className="text-lg font-semibold mt-4 mb-2">2C. Data from Android Health Connect</h3>
@@ -65,6 +69,8 @@ export default function PrivacyPolicy() {
               <li>Steps and distance</li>
               <li>Active and total calories burned</li>
               <li>Heart rate and heart rate variability (HRV)</li>
+              <li><Added>Resting heart rate</Added></li>
+              <li><Added>Exercise sessions, speed, floors climbed and elevation gained</Added></li>
               <li>Blood oxygen saturation (SpO2)</li>
               <li>Respiratory rate</li>
               <li>Blood pressure</li>
@@ -90,6 +96,8 @@ export default function PrivacyPolicy() {
               <li>Crash reports and diagnostic logs</li>
               <li>Feature usage and screen interaction data</li>
             </ul>
+            <h3 className="text-lg font-semibold mt-4 mb-2"><Added>2F. Data from Our Website Forms</Added></h3>
+            <p><Added>When you request beta access on thefitlens.com, we collect your email address, your answers about your phone and hardware, and, if you choose to share it, your device model and whether you use a GLP-1 medication. When you send feedback, we collect the category, your message, your email address and, optionally, your device model. We store this in our database. We send ourselves an email alert for each new beta request, which does not include your GLP-1 answer. To give beta testers access to the app on Google Play, we add their email address to our beta testing group with Google. To limit abuse of these forms, we keep a one-way hash of the email address and IP address used for each submission, for no more than one day.</Added></p>
           </section>
 
           <section id="s3">
@@ -118,9 +126,17 @@ export default function PrivacyPolicy() {
             <ul className="list-disc pl-6 space-y-2 mt-3">
               <li>Cloud hosting and database infrastructure (Supabase)</li>
               <li>Mobile build and deployment infrastructure (Expo Application Services / EAS)</li>
-              <li>AI and machine learning processing services (used for coaching recommendations and AI Chef features)</li>
-              <li>Crash reporting and diagnostics services</li>
+              <li><Removed reason="replaced by the named provider below">AI and machine learning processing services (used for coaching recommendations and AI Chef features)</Removed></li>
+              <li><Added>Anthropic (Claude), for AI coaching and AI Chef. For each request it receives the data needed to answer, which can include your first name, goals, height, weight, body composition, recent weigh-ins and workouts, your chat messages, and GLP-1 protocol details</Added></li>
+              <li><Removed reason="replaced by the named provider below">Crash reporting and diagnostics services</Removed></li>
+              <li><Added>Sentry, for crash reports and diagnostics</Added></li>
+              <li><Added>PostHog (hosted in the EU), for product analytics: usage events linked to your account ID, without your health data. You can turn this off in the app&rsquo;s Profile settings</Added></li>
+              <li><Added>Resend, to send account, beta-access and support emails. It receives your email address and the message</Added></li>
+              <li><Added>USDA FoodData Central, for food search. Our server sends only the search text, not your identity</Added></li>
+              <li><Added>Vercel, which hosts thefitlens.com and processes website form submissions in transit</Added></li>
               <li>Payment processing (Google Play In-App Billing)</li>
+              <li><Added confirm="RevenueCat is in the app code but not in the released beta app; keep, or add when paid plans launch">RevenueCat, to manage subscriptions. It receives your account ID and purchase status</Added></li>
+              <li><Added>Google, to add beta testers&rsquo; email addresses to our Google Play beta testing group</Added></li>
             </ul>
             <h3 className="text-lg font-semibold mt-4 mb-2">4B. Healthcare Provider Sharing (User-Initiated)</h3>
             <p>The Services offer a &lsquo;Share with Doctor&rsquo; feature that allows you to generate and share a PDF health summary with a healthcare provider of your choice. This sharing occurs only upon your explicit, affirmative action and is solely your choice. We do not independently transmit your data to any healthcare provider.</p>
@@ -193,9 +209,11 @@ export default function PrivacyPolicy() {
             <p>The Services integrate with third-party platforms and devices. When you connect a third-party service or device to the Services, you are subject to that third party&rsquo;s privacy policy and terms of service in addition to this Policy. We are not responsible for the privacy practices of third parties. Third-party integrations currently supported or planned include:</p>
             <ul className="list-disc pl-6 space-y-2 mt-3">
               <li>Android Health Connect (Google): governs access to health data stored on your device</li>
-              <li>Bluetooth smart scales (Renpho, Etekcity, Welland, and others), governed by respective manufacturer privacy policies</li>
-              <li>Samsung Galaxy Watch / Samsung Health: governed by Samsung&rsquo;s privacy policy</li>
-              <li>Open Food Facts: open-source food database; no personal data is transmitted to Open Food Facts</li>
+              <li><Removed reason="no Welland or other brands are supported">Bluetooth smart scales (Renpho, Etekcity, Welland, and others), governed by respective manufacturer privacy policies</Removed></li>
+              <li><Added>Bluetooth smart scales and smart tapes (Renpho, Etekcity), governed by each manufacturer&rsquo;s privacy policy</Added></li>
+              <li><Added confirm="the app has no direct Samsung connection; it reads whatever Samsung Health writes to Health Connect">Samsung Health and other apps that write to Health Connect, governed by their own privacy policies</Added> <Removed reason="no direct Galaxy Watch or Samsung Health integration">Samsung Galaxy Watch / Samsung Health: governed by Samsung&rsquo;s privacy policy</Removed></li>
+              <li><Removed reason="incorrect: the phone contacts Open Food Facts directly">Open Food Facts: open-source food database; no personal data is transmitted to Open Food Facts</Removed></li>
+              <li><Added>Open Food Facts, an open food database. When you scan a barcode, your phone requests that product directly from Open Food Facts, which receives the barcode and your device&rsquo;s IP address. No account or health data is sent</Added></li>
             </ul>
           </section>
 

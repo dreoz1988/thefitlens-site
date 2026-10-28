@@ -10,8 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default function CompatibilityPage() {
-  const shownDevices = devices.filter((d) => d.status !== "unverified");
-  const pendingDevices = devices.filter((d) => d.status === "unverified");
+  // Only devices confirmed in the released app are listed as supported.
+  const supportedDevices = devices.filter((d) => d.status === "available");
+  const notYetSupported = devices.filter((d) => d.status === "beta" || d.status === "planned");
   const shownPlatforms = platforms.filter((p) => p.status !== "unverified");
   const pendingPlatforms = platforms.filter((p) => p.status === "unverified");
 
@@ -52,7 +53,7 @@ export default function CompatibilityPage() {
             measurements.
           </p>
           <ul className="divide-y divide-border border-y border-border">
-            {shownDevices.map((d) => (
+            {supportedDevices.map((d) => (
               <li key={d.id} className="py-5 grid gap-2 md:grid-cols-[1fr_auto] md:items-start">
                 <div>
                   <p className="text-sm text-muted">{d.kind}</p>
@@ -60,7 +61,9 @@ export default function CompatibilityPage() {
                     {d.brand} {d.model}
                   </p>
                   <p className="text-muted mt-1 max-w-prose">{d.measures}</p>
-                  {d.note && <p className="text-sm text-subtle mt-1">{d.note}</p>}
+                  {d.id === "renpho-rmsb01" && (
+                    <p className="text-sm text-subtle mt-1">The beta signup form currently asks for an Etekcity scale.</p>
+                  )}
                 </div>
                 <div>
                   <StatusBadge status={d.status} />
@@ -68,11 +71,18 @@ export default function CompatibilityPage() {
               </li>
             ))}
           </ul>
-          {pendingDevices.map((d) => (
-            <div key={d.id} className="mt-4">
-              <PendingPlaceholder label={d.brand} note={d.note} />
+          {notYetSupported.length > 0 && (
+            <div className="mt-8">
+              <h3 className="font-medium mb-3">Not yet supported</h3>
+              <ul className="space-y-2 text-muted">
+                {notYetSupported.map((d) => (
+                  <li key={d.id}>
+                    {d.brand} {d.model}. {d.kind}. Not available in the beta yet.
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
+          )}
         </section>
 
         <section aria-labelledby="hc-heading" className="border-t border-border py-10">
