@@ -258,21 +258,6 @@ export const features: (Feature & { section: HomeSection })[] = [
     heading: "A coach that reads your numbers",
     body: "Daily briefings and a chat coach built on your own readings, not generic advice.",
   },
-  {
-    id: "health-report",
-    section: "what",
-    status: "available",
-    source: "patient-summary-pdf function",
-    heading: "A summary you can share",
-    body:
-      "Export a PDF of your body composition, activity, nutrition targets and coaching notes for your own records or a doctor's visit. It is a personal tracking summary, not a medical record.",
-    image: {
-      src: "/images/report-preview.png",
-      width: 1672,
-      height: 941,
-      alt: `A tablet showing a sample Fit Lens health summary with body composition, nutrition and activity charts. ${SAMPLE}`,
-    },
-  },
   // Added 2026-10-28 on Andre's instruction; he asked that the image claims not be verified.
   {
     id: "health-report-pdf",
@@ -314,7 +299,7 @@ export const features: (Feature & { section: HomeSection })[] = [
       src: "/images/glp1-tracking.png",
       width: 1672,
       height: 941,
-      alt: `A phone showing GLP-1 tracking with protein and hydration against example goals, lean and fat mass change, and weight and lean mass trends, next to two people smiling. ${SAMPLE}`,
+      alt: `A dashboard showing GLP-1 tracking with protein and hydration against example goals, lean and fat mass change, and weight and lean mass history, next to two people standing together. ${SAMPLE}`,
     },
   },
   {
