@@ -303,24 +303,6 @@ export const features: (Feature & { section: HomeSection })[] = [
     },
   },
   {
-    id: "glp1",
-    section: "what",
-    status: "unverified",
-    heading: "GLP-1 dashboard",
-    body: "",
-    pendingNote:
-      "Held for Andre's confirmation. App source has it (useGlp1Coach.ts, GlpOneDashboardSection): protein and hydration against targets, muscle and fat change since start.",
-  },
-  {
-    id: "meal-planner",
-    section: "what",
-    status: "unverified",
-    heading: "AI Chef meal planner",
-    body: "",
-    pendingNote:
-      "Held for Andre's confirmation, with its image (food-logging.png). App source has it (MealPlanCard via callClaudeJSON).",
-  },
-  {
     id: "scale-and-tape",
     section: "connected",
     status: "available",
@@ -350,23 +332,6 @@ export const features: (Feature & { section: HomeSection })[] = [
       height: 941,
       alt: `A phone showing today's steps, heart rate, sleep, distance and active energy from Health Connect, next to two people checking a phone and a watch. ${SAMPLE}`,
     },
-  },
-  {
-    id: "intensity-zones",
-    section: "connected",
-    status: "unverified",
-    heading: "Heart-rate intensity zones",
-    body: "",
-    pendingNote:
-      "Held for Andre's confirmation. App source shows weekly time in zone (TrainingHomeScreen, ZoneStackChart).",
-  },
-  {
-    id: "segmental-avatar",
-    section: "what",
-    status: "unverified",
-    heading: "Per-region body composition",
-    body: "",
-    pendingNote: "The avatar is whole-body today. Confirm whether segmental data is planned before announcing it.",
   },
 ];
 
