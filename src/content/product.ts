@@ -187,10 +187,10 @@ export const features: (Feature & { section: HomeSection })[] = [
     body:
       "The home screen shows your weight trend, how far you are from your goal, and a single priority for today.",
     image: {
-      src: "/images/weight-trend.png",
-      width: 1672,
-      height: 941,
-      alt: `A phone showing The Fit Lens home screen with a weight trend, a goal gauge and today's focus, next to two people looking at a phone. The demo name was removed from the greeting. ${SAMPLE}`,
+      src: "/images/weight-trend-alex.png",
+      width: 1080,
+      height: 1920,
+      alt: `The Fit Lens home screen for a demo account named Alex: a 171.5 lb weight trend, 50% of the way to a 164 lb goal, the weekly pace, and today's priority. ${SAMPLE}`,
     },
   },
   {
