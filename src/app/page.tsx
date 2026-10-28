@@ -6,7 +6,7 @@ import { PendingPlaceholder, ProductFigure, SiteFooter, SiteHeader } from "@/com
 export const metadata: Metadata = {
   title: "The Fit Lens | Body composition, not just weight",
   description:
-    "The Fit Lens splits every weigh-in into fat, muscle and visceral fat. Android app in private beta. Requires a supported Bluetooth body composition scale.",
+    "See your weight trend and how far you are from your goal, log food by barcode, by weight or by search, and check packaged foods before you buy. Android app in private beta.",
 };
 
 const ctaClass =
@@ -99,8 +99,8 @@ export default function Home() {
             Your body is the scoreboard.
           </h1>
           <p className="text-muted text-lg leading-relaxed mb-4 max-w-prose">
-            Food is primary. Training is the multiplier. The Fit Lens reads your Bluetooth scale and splits
-            every weigh-in into fat, muscle and visceral fat, tracked separately.
+            See your weight trend and how far you are from your goal. Log food by barcode, by weight or by
+            search, and check packaged foods before you buy.
           </p>
           <p className="text-subtle mb-10 max-w-prose">Android only. Requires a supported Bluetooth body composition scale.</p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 items-center">

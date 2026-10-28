@@ -5,7 +5,7 @@ import { BetaForm } from "./beta-form";
 export const metadata: Metadata = {
   title: "Request beta access | The Fit Lens",
   description:
-    "The Fit Lens tracks fat, muscle, and visceral fat, not just weight. Android-first. Beta testing requires a Bluetooth body scale and body tape. Request beta access.",
+    "The Fit Lens tracks body fat and muscle mass alongside your weight trend. Android only. Beta testing requires a Bluetooth body scale and body tape. Request beta access.",
 };
 
 function CompositionChart() {
@@ -67,7 +67,7 @@ const DIFFERENTIATORS = [
     n: "01",
     accent: "var(--teal)",
     title: "Composition, not weight",
-    body: "Body fat, muscle mass, and visceral fat from your BIA scale. Every weigh-in becomes three numbers that mean something, not one that doesn't.",
+    body: "Weight, body fat and muscle mass from your Bluetooth scale, tracked over time, so a weigh-in says more than one number.",
   },
   {
     n: "02",
@@ -119,8 +119,8 @@ export default function BetaPage() {
             </h1>
             <p className="text-muted text-lg leading-relaxed mb-4 max-w-prose">
               The scale says you&apos;re down. It can&apos;t say what you lost. The Fit
-              Lens splits every weigh-in into fat, muscle, and visceral fat, so a
-              cut, a recomp, or a GLP-1 protocol is judged on what actually changed.
+              Lens tracks body fat and muscle mass from your scale alongside your
+              weight trend, so you can see what actually changed.
             </p>
             <p className="text-subtle mb-10 max-w-prose">
               Built for Android. The beta currently asks for a Bluetooth body

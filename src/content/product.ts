@@ -148,15 +148,17 @@ export const platforms = [
   },
 ];
 
-// ── Homepage hero image (chosen by Andre 2026-10-27) ────────────────────────
-// Confirmed feature: scale readings + Renpho tape (bleScale.ts, renpho-tape.ts).
-// The image's baked-in line "More integrations being added." is unverified.
+// ── Homepage hero image (changed by Andre 2026-10-28) ───────────────────────
+// Confirmed features: weight trend, goal and today's priority (ResultsHeroCard,
+// ScoreGauge ProgressArc, TodaysPriorityCard). The "Andre" greeting and initial
+// were painted out of this copy of the image. scale-and-tape.png is no longer
+// used on any page.
 
 export const heroImage: ProductImage = {
-  src: "/images/scale-and-tape.png",
+  src: "/images/progress-goal.png",
   width: 1672,
   height: 941,
-  alt: `A phone showing scale readings and tape measurements side by side, next to a smart scale and a smart tape. ${SAMPLE}`,
+  alt: `A phone showing The Fit Lens home screen with a weight trend, distance to goal, and today's focus. ${SAMPLE}`,
 };
 
 // ── Homepage features ───────────────────────────────────────────────────────
@@ -180,12 +182,7 @@ export const features: (Feature & { section: HomeSection })[] = [
     heading: "Your trend, your goal, one priority",
     body:
       "The home screen shows your weight trend, how far you are from your goal, and a single priority for today.",
-    image: {
-      src: "/images/progress-goal.png",
-      width: 1672,
-      height: 941,
-      alt: `A phone showing The Fit Lens home screen with a weight trend, distance to goal, and today's focus. ${SAMPLE}`,
-    },
+    // Image moved to the hero (2026-10-28), so this section is text only.
   },
   {
     id: "body-avatar",
@@ -194,12 +191,12 @@ export const features: (Feature & { section: HomeSection })[] = [
     source: "src/components/BodyAvatarView.tsx",
     heading: "A 3D body built from your readings",
     body:
-      "The model's shape follows your body fat percentage, muscle mass and visceral fat level, and updates with each weigh-in.",
+      "The model's shape follows your scale readings, including body fat percentage and muscle mass, and updates with each weigh-in.",
     image: {
       src: "/screenshots/body-avatar.png",
       width: 390,
       height: 1258,
-      alt: `The Fit Lens 3D wireframe body model with muscle, fat and visceral fat labels. ${SAMPLE}`,
+      alt: `The Fit Lens 3D wireframe body model with callout markers. ${SAMPLE}`,
     },
   },
   {
