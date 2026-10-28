@@ -110,7 +110,9 @@ export const devices: Device[] = [
 // ── Health Connect ──────────────────────────────────────────────────────────
 
 export const healthConnect = {
-  status: "available" as FeatureStatus,
+  // Unverified on Andre's instruction (2026-10-28); the lists below are what
+  // the app source reads, kept for when it is confirmed.
+  status: "unverified" as FeatureStatus,
   source: "src/services/healthConnect.ts REQUIRED_RECORD_TYPES / OPTIONAL_RECORD_TYPES",
   access: "Read only. The app writes nothing to Health Connect.",
   required: ["Steps", "Heart rate", "Resting heart rate", "Sleep", "Total calories burned"],
@@ -134,7 +136,7 @@ export const healthConnect = {
 export const platforms = [
   {
     id: "android",
-    label: "Android phone with Health Connect",
+    label: "Android phone",
     status: "available" as FeatureStatus,
     source: "Play release 12",
   },
@@ -157,11 +159,22 @@ export const heroImage: ProductImage = {
   alt: `A phone showing scale readings and tape measurements side by side, next to a smart scale and a smart tape. ${SAMPLE}`,
 };
 
-// ── Homepage features, in page order ────────────────────────────────────────
+// ── Homepage features ───────────────────────────────────────────────────────
+// `section` places each feature in the homepage outline:
+//   what       "What the app does"
+//   connected  "Connected data"
+// Only status "available" is published. On 2026-10-28 Andre asked for the
+// GLP-1 dashboard, meal planner, intensity zones and Health Connect records to
+// stay "unverified" (off the site, images held) until he confirms them, and
+// for the product score to be marked "planned". The notes record what the app
+// source shows for each, so the decision can be revisited.
 
-export const features: Feature[] = [
+export type HomeSection = "what" | "connected";
+
+export const features: (Feature & { section: HomeSection })[] = [
   {
     id: "progress-goal",
+    section: "what",
     status: "available",
     source: "ResultsHeroCard (trend and goal projection), ScoreGauge ProgressArc, TodaysPriorityCard",
     heading: "Your trend, your goal, one priority",
@@ -175,15 +188,8 @@ export const features: Feature[] = [
     },
   },
   {
-    id: "scale-and-tape",
-    status: "available",
-    source: "src/services/bleScale.ts, src/ble/tape/renpho-tape.ts",
-    heading: "Scale and tape in one place",
-    body:
-      "Weight, body fat and muscle mass come from your Bluetooth scale. The Renpho smart tape adds circumference at up to 14 sites, from neck to calves.",
-  },
-  {
     id: "body-avatar",
+    section: "what",
     status: "available",
     source: "src/components/BodyAvatarView.tsx",
     heading: "A 3D body built from your readings",
@@ -197,59 +203,44 @@ export const features: Feature[] = [
     },
   },
   {
-    id: "health-connect",
-    status: "available",
-    source: "src/services/healthConnect.ts; TrainingHomeScreen and ZoneStackChart for zones",
-    heading: "Activity from Health Connect",
-    body:
-      "Steps, sleep, heart rate, workouts and more are read from Health Connect with your permission. Workouts show time in each heart-rate zone. What you see depends on what your watch or phone records.",
-    image: {
-      src: "/images/health-connect-activity.png",
-      width: 1672,
-      height: 941,
-      alt: `A phone showing today's steps, heart rate, sleep, distance and active energy. ${SAMPLE}`,
-    },
-  },
-  {
     id: "food-logging",
+    section: "what",
     status: "available",
-    source: "WeighAndScanModal, FoodScaleService, food-search function, MealPlanCard, useWeighIns to planSync",
-    heading: "Scan, weigh, search, plan",
+    source: "WeighAndScanModal, FoodScaleService, food-search function, useWeighIns to planSync",
+    heading: "Scan, weigh or search your food",
     body:
-      "Log food by barcode, by weight from the Etekcity nutrition scale, or by search. Your protein target is recalculated after each weigh-in, and AI Chef builds a meal plan around your targets.",
-    image: {
-      src: "/images/food-logging.png",
-      width: 1672,
-      height: 941,
-      alt: `A phone showing AI Chef with barcode scan, food log, food library and a 7-day meal plan. ${SAMPLE}`,
-    },
+      "Log food by barcode, by weight from the Etekcity nutrition scale, or by search. Your protein target is recalculated after each weigh-in.",
   },
   {
     id: "product-check",
+    section: "what",
     status: "available",
     source: "src/components/ProductCheckModal.tsx, src/lib/productHealth.ts",
     heading: "Check a product before you buy it",
     body:
-      "Scan a packaged food to see its Nutri-Score, NOVA processing group and additives, where Open Food Facts has the data.",
+      "Scan a packaged food to see what's good and what to watch: whether it's high or low in sugar, salt and fat, how processed it is, and its additives, from Open Food Facts data.",
   },
   {
-    id: "glp1",
-    status: "available",
-    source: "src/hooks/useGlp1Coach.ts, GlpOneDashboardSection",
-    heading: "Built for GLP-1 users, too",
-    body:
-      "Track protein and hydration against your targets, and see muscle and fat change since your start date. The Fit Lens does not give medication advice.",
+    id: "product-score",
+    section: "what",
+    status: "planned",
+    heading: "Product score",
+    body: "",
+    pendingNote:
+      "Marked planned on Andre's instruction (2026-10-28) to keep it off the site. Release 12 already shows a score out of 100 in Check a Product (ProductCheckModal).",
   },
   {
     id: "body-score",
+    section: "what",
     status: "available",
     source: "src/utils/bodyScoreEngine.ts",
     heading: "Body Score",
     body:
-      "One score from body composition (40%), activity including sleep (25%), nutrition (25%) and hydration (10%), so you can see what moved it.",
+      "One weekly read from body composition (40%), activity including sleep (25%), nutrition (25%) and hydration (10%), so you can see what moved it.",
   },
   {
     id: "ai-coach",
+    section: "what",
     status: "available",
     source: "src/lib/anthropic.ts, coach and coach-v2 functions",
     heading: "A coach that reads your numbers",
@@ -257,6 +248,7 @@ export const features: Feature[] = [
   },
   {
     id: "health-report",
+    section: "what",
     status: "available",
     source: "patient-summary-pdf function",
     heading: "A summary you can share",
@@ -270,7 +262,53 @@ export const features: Feature[] = [
     },
   },
   {
+    id: "glp1",
+    section: "what",
+    status: "unverified",
+    heading: "GLP-1 dashboard",
+    body: "",
+    pendingNote:
+      "Held for Andre's confirmation. App source has it (useGlp1Coach.ts, GlpOneDashboardSection): protein and hydration against targets, muscle and fat change since start.",
+  },
+  {
+    id: "meal-planner",
+    section: "what",
+    status: "unverified",
+    heading: "AI Chef meal planner",
+    body: "",
+    pendingNote:
+      "Held for Andre's confirmation, with its image (food-logging.png). App source has it (MealPlanCard via callClaudeJSON).",
+  },
+  {
+    id: "scale-and-tape",
+    section: "connected",
+    status: "available",
+    source: "src/services/bleScale.ts, src/ble/tape/renpho-tape.ts",
+    heading: "Scale and tape in one place",
+    body:
+      "Weight, body fat and muscle mass come from your Bluetooth scale. The Renpho smart tape adds circumference at up to 14 sites, from neck to calves.",
+  },
+  {
+    id: "health-connect-records",
+    section: "connected",
+    status: "unverified",
+    heading: "Activity from Health Connect",
+    body: "",
+    pendingNote:
+      "Held for Andre's confirmation, with its image (health-connect-activity.png). App source reads 5 required and 13 optional record types (healthConnect.ts).",
+  },
+  {
+    id: "intensity-zones",
+    section: "connected",
+    status: "unverified",
+    heading: "Heart-rate intensity zones",
+    body: "",
+    pendingNote:
+      "Held for Andre's confirmation. App source shows weekly time in zone (TrainingHomeScreen, ZoneStackChart).",
+  },
+  {
     id: "segmental-avatar",
+    section: "what",
     status: "unverified",
     heading: "Per-region body composition",
     body: "",
@@ -281,6 +319,14 @@ export const features: Feature[] = [
 // ── Images supplied 2026-10-27 that are held, not published ────────────────
 
 export const heldImages = [
+  {
+    file: "Scan, log, and plan meals.png (public/images/food-logging.png)",
+    reason: "Shows the AI Chef meal planner, which is unverified until Andre confirms it (2026-10-28).",
+  },
+  {
+    file: "The Fit Lens wearable activity dashboard.png (public/images/health-connect-activity.png)",
+    reason: "Shows Health Connect records, which are unverified until Andre confirms them (2026-10-28).",
+  },
   {
     file: "The Fit Lens grocery scanning demo.png",
     reason: "Shows an ingredients list and nutrition table. Check a Product shows a grade, Nutri-Score, NOVA and additives instead. Also uses a different logo.",

@@ -6,7 +6,7 @@ import { PendingPlaceholder, SiteFooter, SiteHeader, StatusBadge } from "@/compo
 export const metadata: Metadata = {
   title: "Compatibility | The Fit Lens",
   description:
-    "Supported Bluetooth scales, smart tape and Health Connect data for The Fit Lens Android app.",
+    "Supported Bluetooth scales and smart tape for The Fit Lens Android app.",
 };
 
 export default function CompatibilityPage() {
@@ -85,34 +85,46 @@ export default function CompatibilityPage() {
           )}
         </section>
 
-        <section aria-labelledby="hc-heading" className="border-t border-border py-10">
-          <div className="flex flex-wrap items-center gap-3 mb-2">
-            <h2 id="hc-heading" className="text-2xl font-semibold tracking-tight">Health Connect</h2>
-            <StatusBadge status={healthConnect.status} />
-          </div>
-          <p className="text-muted mb-6 max-w-prose">
-            Activity, sleep and heart data come from Android Health Connect, from whichever watch or app
-            writes there. {healthConnect.access} You choose which types to share.
-          </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="font-medium mb-3">Needed for activity tracking</h3>
-              <ul className="text-muted space-y-1 list-disc pl-5">
-                {healthConnect.required.map((t) => (
-                  <li key={t}>{t}</li>
-                ))}
-              </ul>
+        {healthConnect.status === "unverified" ? (
+          // Nothing at all in production; a placeholder on previews.
+          process.env.VERCEL_ENV === "production" ? null : (
+          <section aria-label="Pending confirmation" className="border-t border-border py-10">
+            <PendingPlaceholder
+              label="Health Connect record types"
+              note="Held for Andre's confirmation (2026-10-28). The app source reads 5 required and 13 optional record types."
+            />
+          </section>
+          )
+        ) : (
+          <section aria-labelledby="hc-heading" className="border-t border-border py-10">
+            <div className="flex flex-wrap items-center gap-3 mb-2">
+              <h2 id="hc-heading" className="text-2xl font-semibold tracking-tight">Health Connect</h2>
+              <StatusBadge status={healthConnect.status} />
             </div>
-            <div>
-              <h3 className="font-medium mb-3">Used when available</h3>
-              <ul className="text-muted space-y-1 list-disc pl-5">
-                {healthConnect.optional.map((t) => (
-                  <li key={t}>{t}</li>
-                ))}
-              </ul>
+            <p className="text-muted mb-6 max-w-prose">
+              Activity, sleep and heart data come from Android Health Connect, from whichever watch or app
+              writes there. {healthConnect.access} You choose which types to share.
+            </p>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="font-medium mb-3">Needed for activity tracking</h3>
+                <ul className="text-muted space-y-1 list-disc pl-5">
+                  {healthConnect.required.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-medium mb-3">Used when available</h3>
+                <ul className="text-muted space-y-1 list-disc pl-5">
+                  {healthConnect.optional.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         <section className="border-t border-border py-10">
           <p className="text-muted max-w-prose">
