@@ -233,6 +233,15 @@ export const features: (Feature & { section: HomeSection })[] = [
     },
   },
   {
+    id: "product-score",
+    section: "what",
+    status: "available",
+    source: "src/components/ProductCheckModal.tsx:154-155, src/lib/productHealth.ts:39",
+    heading: "Product score",
+    body:
+      "Every product you check gets a score out of 100, with a short breakdown of what raised or lowered it.",
+  },
+  {
     id: "body-score",
     section: "what",
     status: "available",
