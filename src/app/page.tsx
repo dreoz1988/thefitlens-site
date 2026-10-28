@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { devices, features, heroImage, type HomeSection } from "@/content/product";
+import { devices, features, type HomeSection } from "@/content/product";
 import { PendingPlaceholder, ProductFigure, SiteFooter, SiteHeader } from "@/components/site-chrome";
 
 export const metadata: Metadata = {
@@ -112,9 +112,6 @@ export default function Home() {
             </Link>
           </div>
         </section>
-        <div className="pb-16 md:pb-24">
-          <ProductFigure image={heroImage} priority />
-        </div>
 
         {/* 2. What the app does */}
         <section id="features" aria-labelledby="what-heading" className="scroll-mt-12 border-t border-border pt-12">
