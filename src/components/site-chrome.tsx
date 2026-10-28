@@ -58,7 +58,9 @@ export function ProductFigure({
 }) {
   return (
     <figure className={narrow ? "w-full max-w-[240px]" : "w-full"}>
-      <div className="relative overflow-hidden rounded-xl border border-border bg-surface">
+      {/* Frame uses the darker --subtle token: on the white page, parts of some
+          images' edges (e.g. report-preview's bright counter) are near-white. */}
+      <div className="relative overflow-hidden rounded-xl border border-subtle bg-surface">
         <Image
           src={image.src}
           alt={image.alt}

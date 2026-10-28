@@ -1,29 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  /* Committed dark identity — not a light/dark switch. Health data read at
-     a desk or in bed; calm and serious reads better dark, same call Whoop
-     and Oura make. Neutrals tinted slightly toward the teal hue rather
-     than pure black/white. */
-  --background: oklch(16% 0.011 227);
-  --surface: oklch(21% 0.013 227);
-  --foreground: oklch(96% 0.004 227);
-  --muted: oklch(72% 0.018 227);
-  /* Raised from 48% on 2026-10-27: 48% measured 2.98:1 on --background.
-     66% clears 4.5:1 on both --background and --surface. */
-  --subtle: oklch(66% 0.018 227);
-  --border: oklch(31% 0.018 227);
+  /* Light theme (2026-10-28). Forced: the site does not follow the phone's
+     dark mode, so every visitor sees the same white page and the contrast
+     checks below hold everywhere. Neutrals stay tinted toward the teal hue. */
+  color-scheme: light;
+  --background: #ffffff;
+  --surface: oklch(97% 0.005 227);
+  --foreground: oklch(23% 0.015 227);
+  --muted: oklch(44% 0.02 227);
+  --subtle: oklch(50% 0.02 227);
+  --border: oklch(87% 0.012 227);
 
   /* Interactive: solid inversion, no gradient, no gimmick. */
-  --inverse: oklch(96% 0.004 227);
-  --inverse-dim: var(--muted);
+  --inverse: oklch(23% 0.015 227);
+  --inverse-dim: oklch(35% 0.02 227);
 
-  /* Data accents — reused from the app's own metric colors, not a fresh
-     marketing palette. Each carries a fixed meaning; see DESIGN.md. */
-  --teal: #06b6d4; /* muscle / primary interactive */
-  --coral: #fb7185; /* fat mass */
-  --azure: #3b82f6; /* secondary accent / links */
-  --amber: #f5b82e; /* visceral fat / flagged metric */
+  /* Data accents: the app's metric hues, in darker shades so they pass
+     4.5:1 as text on white and behind white button text. Each keeps its
+     fixed meaning; see DESIGN.md. Dark-theme values were #06b6d4, #fb7185,
+     #3b82f6 and #f5b82e. */
+  --teal: #0e7490; /* muscle / primary interactive */
+  --coral: #be123c; /* fat mass */
+  --azure: #1d4ed8; /* secondary accent / links */
+  --amber: #b45309; /* visceral fat / flagged metric */
 }
 
 @theme inline {

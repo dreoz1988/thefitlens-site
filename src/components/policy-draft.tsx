@@ -22,7 +22,8 @@ export function Added({ children, confirm }: { children: ReactNode; confirm?: st
   return (
     <ins className="no-underline rounded bg-[var(--amber)]/15 px-1 text-foreground">
       {children}
-      {confirm && <span className="ml-1 text-xs font-semibold text-[var(--amber)]">[Confirm: {confirm}]</span>}
+      {/* Foreground, not amber: amber text on the amber tint measured 4.08:1. */}
+      {confirm && <span className="ml-1 text-xs font-semibold text-foreground">[Confirm: {confirm}]</span>}
     </ins>
   );
 }

@@ -6,8 +6,8 @@ import { updatePassword, type ResetState } from "./actions";
 const initialState: ResetState = { status: "idle" };
 
 const inputClass =
-  "w-full bg-transparent border-0 border-b border-neutral-800 py-3 text-white " +
-  "placeholder:text-neutral-600 focus:outline-none focus:border-inverse transition-colors";
+  "w-full bg-transparent border-0 border-b border-border py-3 text-foreground " +
+  "placeholder:text-subtle focus:outline-none focus:border-inverse transition-colors";
 
 // The recovery token arrives in the URL fragment (implicit flow):
 //   /reset-password#access_token=...&type=recovery
@@ -44,15 +44,15 @@ export function ResetForm() {
   }, []);
 
   if (link.kind === "checking") {
-    return <p className="text-neutral-400">Checking your reset link...</p>;
+    return <p className="text-muted">Checking your reset link...</p>;
   }
 
   if (link.kind === "invalid") {
     return (
-      <div aria-live="polite" className="border-t border-neutral-800 pt-8">
-        <p className="text-xl text-white mb-3">This link isn't usable.</p>
-        <p className="text-neutral-400 mb-3">{link.reason}</p>
-        <p className="text-neutral-400">
+      <div aria-live="polite" className="border-t border-border pt-8">
+        <p className="text-xl text-foreground mb-3">This link isn't usable.</p>
+        <p className="text-muted mb-3">{link.reason}</p>
+        <p className="text-muted">
           Open The Fit Lens app, tap Forgot Password on the Sign In screen, and
           use the newest email. Links expire after an hour and work once.
         </p>
@@ -62,9 +62,9 @@ export function ResetForm() {
 
   if (state.status === "success") {
     return (
-      <div aria-live="polite" className="border-t border-neutral-800 pt-8">
-        <p className="text-xl text-white mb-3">Password updated.</p>
-        <p className="text-neutral-400">
+      <div aria-live="polite" className="border-t border-border pt-8">
+        <p className="text-xl text-foreground mb-3">Password updated.</p>
+        <p className="text-muted">
           Return to The Fit Lens app and sign in with your new password.
         </p>
       </div>
@@ -76,7 +76,7 @@ export function ResetForm() {
       <input type="hidden" name="access_token" value={link.accessToken} />
 
       <div>
-        <label htmlFor="password" className="block text-sm text-neutral-400 mb-1">
+        <label htmlFor="password" className="block text-sm text-muted mb-1">
           New password
         </label>
         <input
@@ -92,7 +92,7 @@ export function ResetForm() {
       </div>
 
       <div>
-        <label htmlFor="confirm" className="block text-sm text-neutral-400 mb-1">
+        <label htmlFor="confirm" className="block text-sm text-muted mb-1">
           Confirm new password
         </label>
         <input
@@ -111,14 +111,14 @@ export function ResetForm() {
         <button
           type="submit"
           disabled={pending}
-          className="w-full sm:w-auto bg-inverse text-neutral-950 font-medium px-8 py-3
-                     hover:bg-neutral-300 transition-colors disabled:opacity-60
+          className="w-full sm:w-auto bg-inverse text-background font-medium px-8 py-3
+                     hover:bg-inverse-dim transition-colors disabled:opacity-60
                      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inverse"
         >
           {pending ? "Updating..." : "Update password"}
         </button>
         {state.status === "error" && (
-          <p aria-live="polite" className="mt-4 text-sm text-red-400">
+          <p aria-live="polite" className="mt-4 text-sm text-[var(--coral)]">
             {state.message}
           </p>
         )}
